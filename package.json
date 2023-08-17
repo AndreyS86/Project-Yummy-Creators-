@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/AndreyS86/TastyTreats",
+  "homepage": "https://goitacademy.github.io/AndreyS86/Project-Yummy-Creators-",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /TastyTreats/"
+    "build": "parcel build src/*.html --public-url /Project-Yummy-Creators-/"
   },
   "repository": {
     "type": "git",
