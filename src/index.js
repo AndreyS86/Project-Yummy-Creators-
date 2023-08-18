@@ -1,7 +1,11 @@
-import { hero } from './js/hero';
-import { favoritesRecipe } from './js/favorites-recipe';
-import { header } from './js/header';
-import { recipe } from './js/recipe';
+import { hero } from './js/hero/hero';
+import { favoritesRecipe } from './js/favorites-recipe/favorites-recipe';
+import { header } from './js/header/header';
+import { recipe } from './js/recipe/recipe';
+import { modal } from './js/modal/modal';
+import { pagination } from './js/pagination/pagination';
+import { category } from './js/category/category';
+import { popular } from './js/popular/popular';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
