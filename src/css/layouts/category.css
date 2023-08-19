@@ -1,0 +1,192 @@
+:root {
+    --brand-black: #050505;
+    --brand-white: #f7f7f7;
+    --clear-white: #fff;
+    --brand-grey-darker: #05050580;
+    --brand-grey-lighter: rgba(5, 5, 5, 0.302);
+    --brand-orange: #eea10c;
+    --brand-green: #9bb537;
+    --dark-mode-bg: #1e1e1e;
+    --basic-transition: all 300ms ease;
+  }
+  
+  *, *::before, *::after {
+      box-sizing: border-box;
+    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+  .categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .categories-container {
+    max-width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .filter-all-categories {
+    margin-bottom: 40px;
+  }
+  
+  .filter-all-categories {
+    margin-bottom: 40px;
+  }
+  
+  .filter-all-categories-button {
+    width: 176px;
+    height: 50px;
+    padding: 14px 29px;
+    margin-bottom: 24px;
+    border-radius: 15px;
+    border: 1px solid #05050533;
+    background-color: transparent;
+    color: rgba(5, 5, 5, 0.5);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--basic-transition);
+  }
+  
+  .category-item.active .category-name,
+  .category-item.active-category {
+    color: var(--brand-green);
+  }
+  
+  .filter-all-categories-button:hover {
+    background-color: var(--brand-green);
+    color: var(--brand-white);
+    border: 1px solid transparent;
+  }
+  
+  .filter-all-categories-button:active,
+  .filter-all-categories-button.active-category {
+    background-color: var(--brand-green);
+    color: var(--brand-white);
+    border: 1px solid transparent;
+  }
+  
+  .active-category {
+    color: var(--brand-green);
+  }
+  
+  .dark-mode .filter-all-categories-button {
+    color: #ffffff80;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark-mode .filter-all-categories-button:hover {
+    color: #f8f8f8;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .filter-categories-block {
+    min-width: 320px;
+    height: 198px;
+    overflow-y: auto;
+  }
+
+  .filter-categories-block::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .filter-categories-block::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgba(5, 5, 5, 0.18);
+  }
+  
+  .dark-mode .filter-categories-block::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+  }
+  
+  .category-item {
+    margin-bottom: 18px;
+  }
+  
+  .category-name {
+    color: rgba(5, 5, 5, 0.3);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  
+  .dark-mode .category-name {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .category-name:hover {
+    color: var(--brand-green);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .filter-all-categories-button {
+    margin-bottom: 30px;
+    width: 174px;
+    box-sizing: border-box;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .categories-container {
+      max-width: 768px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .filter-all-categories {
+      width: 174px;
+      box-sizing: border-box;
+      margin-top: 24px;
+      margin-bottom: 64px;
+    }
+    .filter-all-categories-button {
+      margin-bottom: 30px;
+      width: 174px;
+      box-sizing: border-box;
+    }
+  
+    .filter-categories-block {
+      min-width: 174px;
+      height: 416px;
+      overflow: overlay;
+    }
+    .filter-categories-block::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      background: rgba(5, 5, 5, 0.18);
+    }
+    .category-item {
+      margin-bottom: 24px;
+    }
+    .category-name {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .categories-container {
+      max-width: 1280px;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .all-categories-button {
+      width: 174px;
+    }
+    .filter-categories-block {
+      min-width: 235px;
+      height: 416px;
+      overflow: overlay;
+    }
+  }
+  
