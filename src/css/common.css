@@ -1,11 +1,1 @@
-@media screen and (min-width: 320px) {
-
-}
-
-@media screen and (min-width: 767px) {
- 
-}
-
-@media screen and (min-width: 1279px) {
- 
-}
+@import '~node_modules/modern-normalize/modern-normalize.css';
