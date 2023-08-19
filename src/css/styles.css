@@ -5,3 +5,54 @@
 @import './layouts/recipe';
 @import './layouts/favorites-recipe';
 @import './common.css';
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/Inter-ThinBETA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Inter-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 100px;
+
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 0 32px;
+
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+
+  }
+}
+

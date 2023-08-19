@@ -4,13 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <include src="./partials/header.html"></include>
+    <div class="container">
+      <include src="./partials/header.html"></include>
+    </div>
     <main>
-      <include src="./partials/hero.html"></include>
-      <include src="./partials/recipe.html"></include>
+      <div class="container">
+        <include src="./partials/hero.html"></include>
+      </div>
+      <div class="container">
+        <include src="./partials/category.html"></include>
+        <include src="./partials/popular.html"></include>
+      </div>
+      <div class="container">
+        <include src="./partials/recipe.html"></include>
+      </div>
     </main>
     <include src="./favorites.html"></include>
     <script type="module" src="./index.js"></script>

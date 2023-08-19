@@ -1,0 +1,20 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  --primary-color: transparent;
+  --bg-color: transparent;
+  --font-color: #ffffff;
+  --font-placeholder-color: #ffffff80;
+  --disabled-color: #dcdee2;
+  --border-color: #ffffff33;
+  --highlight-color: #fffb8c;
+  --success-color: #00b755;
+  --error-color: #dc3545;
+  --main-height: 49.5px;
+  --content-height: 300px;
+  --spacing-l: 8px;
+  --spacing-m: 5px;
+  --spacing-s: 4px;
+  --animation-timing: 0.2s;
+  --border-radius: 15px;
+}
