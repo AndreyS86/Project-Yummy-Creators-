@@ -37,16 +37,14 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 100px;
-  background-color: blue;
-  border: solid 3px green;
+
 }
 
 @media screen and (max-width: 767px) {
   .container {
     max-width: 100%;
     padding: 0 32px;
-    background-color: rebeccapurple;
-    border: solid 3px yellow;
+
   }
 }
 
@@ -54,7 +52,7 @@
   .container {
     max-width: 100%;
     padding: 0 20px;
-    background-color: rgb(244, 248, 8);
-    border: solid 3px rgb(245, 11, 214);
+
   }
 }
+
