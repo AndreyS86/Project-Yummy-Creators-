@@ -1,0 +1,67 @@
+.dark-theme {
+  background-color: #161616;
+  color: #f8f8f8;
+}
+
+.dark-background-mob {
+  background-color: #050505;
+}
+
+.dark-theme .header-nav-links {
+  color: #ffffff;
+}
+
+.dark-theme .header-nav-links.nav-link-active {
+  color: #9bb537;
+}
+
+.dark-theme .logo-treats {
+  color: #ffffff;
+}
+
+.dark-theme .shopping-icon-use {
+  stroke: #ffffff;
+}
+
+.dark-theme .shopping-icon-use {
+  fill: #161616;
+}
+
+.dark-theme .mobile-menu-icon {
+  stroke: #ffffff;
+}
+
+.dark-theme .mob-nav-link-active {
+  color: #9bb537;
+}
+
+.dark-theme .mob-nav-link-active::before {
+  background-color: #9bb537;
+}
+
+.dark-theme .shopping-icon-use:hover {
+  stroke: #9bb537;
+  transition: 0.4s;
+}
+
+.dark-theme .shopping-icon-use:focus {
+  stroke: #9bb537;
+  transition: 0.4s;
+}
+
+.dark-theme .header-nav-links:hover {
+  color: #9bb537;
+}
+
+.dark-theme .header-nav-links:focus {
+  color: #9bb537;
+}
+
+.dark-theme .mobile-menu-icon:hover {
+  stroke: #9bb537;
+  transition: 0.4s;
+}
+
+.dark-theme .mobile-menu-icon:focus {
+  stroke: #9bb537;
+}
