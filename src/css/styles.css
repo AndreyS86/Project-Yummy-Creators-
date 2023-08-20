@@ -6,6 +6,8 @@
 @import './layouts/favorites-recipe';
 @import './layouts/popular';
 @import './layouts/category.css';
+@import './search/search.css';
+@import './search/media.css';
 @import './common.css';
 
 @font-face {
