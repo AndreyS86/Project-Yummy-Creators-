@@ -1,0 +1,28 @@
+@media screen and (min-width: 375px) {
+    .container {
+        width: 375px;
+    } 
+}
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    } 
+    .search-form-input {
+        width: 278px;
+      }
+      .select-time {
+        width: 125px;
+      }
+      .select-area {
+        width: 141px;
+      }
+}
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+        padding-left: 100px;
+        padding-right: 99px;
+    } 
+}
