@@ -7,7 +7,7 @@
     --brand-orange: #eea10c;
     --brand-green: #9bb537;
     --dark-mode-bg: #1e1e1e;
-    --basic-transition: all 300ms ease;
+    --basic-transition: all 250ms ease;
   }
   
   *, *::before, *::after {
@@ -30,8 +30,8 @@
   
   .categories-container {
     max-width: 375px;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
     margin-left: auto;
     margin-right: auto;
   }
@@ -141,8 +141,8 @@
   @media screen and (min-width: 768px) {
     .categories-container {
       max-width: 768px;
-      padding-left: 32px;
-      padding-right: 32px;
+      /* padding-left: 32px;
+      padding-right: 32px; */
     }
     .filter-all-categories {
       width: 174px;
@@ -177,8 +177,8 @@
   @media screen and (min-width: 1280px) {
     .categories-container {
       max-width: 1280px;
-      padding-left: 100px;
-      padding-right: 100px;
+      /* padding-left: 100px;
+      padding-right: 100px; */
     }
     .all-categories-button {
       width: 174px;
