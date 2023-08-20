@@ -4,6 +4,8 @@
 @import './layouts/_hero.css';
 @import './layouts/recipe';
 @import './layouts/favorites-recipe';
+@import './layouts/popular';
+@import './layouts/category.css';
 @import './common.css';
 
 @font-face {
@@ -37,14 +39,12 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 100px;
-
 }
 
 @media screen and (max-width: 767px) {
   .container {
     max-width: 100%;
     padding: 0 32px;
-
   }
 }
 
@@ -52,7 +52,5 @@
   .container {
     max-width: 100%;
     padding: 0 20px;
-
   }
 }
-
