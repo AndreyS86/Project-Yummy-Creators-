@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <include src="./partials/header.html"></include>
+      <include src="partials/header.html"></include>
     </div>
-    <main></main>
-      <include src="./partials/favorites-recipe.html"></include>
-      <script type="module" src="./index.js"></script>
+    <main>
+      <include src="./partials/favorites-recipe.html"></include>      
     </main>
+    <script type="module" src="js/favorites-recipe/favorites-recipe.js"></script>
   </body>
 </html>
