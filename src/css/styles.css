@@ -2,6 +2,7 @@
 @import './layouts/_favorites.css';
 @import './layouts/_header.css';
 @import './layouts/_hero.css';
+@import './layouts/gallery-markup.css';
 @import './layouts/recipe';
 @import './layouts/favorites-recipe';
 @import './layouts/popular';
