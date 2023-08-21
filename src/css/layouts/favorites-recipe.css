@@ -141,6 +141,27 @@ ul {
   width: 22px;
   height: 22px;
   fill: #f8f8f8;
+  transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 400ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.fav-card-heart:hover {
+  stroke: #ff0000;
+  stroke-width: 2px;
+  animation: animateHeart 2000ms infinite 0ms;
+}
+
+@keyframes animateHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .fav-card-img {
@@ -254,6 +275,11 @@ ul {
   border-radius: 8px;
   cursor: pointer;
   background-color: #9bb537;
+  transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.fav-card-see-btn:hover {
+  color: #050505;
 }
 
 @media screen and (min-width: 1280px) {
