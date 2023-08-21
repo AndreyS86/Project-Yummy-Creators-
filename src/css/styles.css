@@ -1,6 +1,7 @@
 @import './_utils';
 @import './layouts/_favorites.css';
 @import './layouts/_header.css';
+@import './layouts/dark_theme.css';
 @import './layouts/_hero.css';
 @import './layouts/recipe';
 @import './layouts/favorites-recipe';
