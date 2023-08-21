@@ -1,0 +1,272 @@
+/* Reset styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*===== General =====*/
+
+.section {
+  padding-top: 12px;
+  padding-bottom: 20px;  
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 375px;  
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1280px;
+  }
+}
+
+/*===== Favorites cards =====*/
+
+.favorites-cards {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .favorites-cards {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-cards {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .favorites-cards {
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+.fav-card {
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-image: linear-gradient(
+    1deg,
+    rgba(5, 5, 5, 0.6) 0%,
+    rgba(5, 5, 5, 0) 100%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .fav-card {
+    padding-top: 214px;
+    max-width: 335px;
+    min-height: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fav-card {
+    padding-top: 123px;
+    min-height: 244px;
+    flex-basis: calc((100% - 32px) / 3);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-card {
+    padding-top: 166px;
+    min-height: 287px;
+    flex-basis: calc((100% - 48px) / 4);
+  }
+}
+
+.fav-card-heart-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 22px;
+  height: 22px;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+.fav-card-heart {
+  width: 22px;
+  height: 22px;
+  fill: #f8f8f8;
+}
+
+.fav-card-img {
+  z-index: -10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-size: cover; */
+  height: 100%;
+  width: auto;
+}
+
+.fav-card-title {
+  margin-bottom: 8px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: calc(18 / 14);
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #f8f8f8;
+}
+
+.fav-card-desc {
+  margin-bottom: 16px;
+  height: 32px;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #f8f8f8;
+}
+
+.fav-card-info-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fav-card-rating {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: calc(18 / 14);
+  color: #f8f8f8;
+}
+
+.fav-rating-wrap {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .fav-rating-wrap {
+    column-gap: 2px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-rating-wrap {
+    column-gap: 4px;
+  }
+}
+
+.fav-stars-wrap {
+  display: flex;
+  column-gap: 1.5px;
+}
+
+.fav-card-star {
+  width: 18px;
+  height: 18px;
+  fill: #f8f8f8;
+  opacity: 0.1;
+}
+
+@media screen and (min-width: 768px) {
+  .fav-card-star {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-card-star {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.fav-card-see-btn {
+  max-width: 89px;
+  min-height: 31px;
+  padding: 8px 14px;
+  border: none;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #f8f8f8;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #9bb537;
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-card-see-btn {
+    max-width: 93px;
+  }
+}
+
+.star-one .fav-card-star:nth-child(-n + 1),
+.star-two .fav-card-star:nth-child(-n + 2),
+.star-three .fav-card-star:nth-child(-n + 3),
+.star-four .fav-card-star:nth-child(-n + 4),
+.star-five .fav-card-star:nth-child(-n + 5) {
+  fill: #eea10c;
+  opacity: 1;
+}
