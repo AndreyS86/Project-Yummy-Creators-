@@ -8,7 +8,6 @@ const formTime = document.querySelector('.select-time');
 const formArea = document.querySelector('.select-area');
 const formIngredients = document.querySelector('.select-ingredients');
 
-
 let currentPage = 1;
 const url_recipes = 'https://tasty-treats-backend.p.goit.global/api/recipes/';
 

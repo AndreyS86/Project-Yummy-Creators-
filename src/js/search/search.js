@@ -84,7 +84,6 @@ export function updateOutput() {
     getRecipes();
  }
 
-
  function form_Reset() {
     form.reset();
     inputFormClose.style.display = 'none';
