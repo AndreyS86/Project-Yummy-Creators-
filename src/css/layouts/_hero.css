@@ -1,0 +1,163 @@
+.hero-list {
+  padding-top: 91px;
+}
+
+.hero-container {
+  max-width: 428px;
+  padding: 20px;
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+/* @media screen and (min-width: 480px) {
+  .hero-container {
+    max-width: 428px;
+    width: 100%;
+  }
+} */
+
+.title {
+  text-transform: uppercase;
+  width: 335px;
+  margin-bottom: 14px;
+}
+
+.hero-link {
+  color: #9bb537;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 120%;
+  /* text-transform: uppercase; */
+}
+
+.hero-title {
+  color: #050505;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero-subtitle {
+  color: #050505;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 14px 0 28px;
+  /* width: 335px; */
+}
+
+.hero-btn {
+  color: #050505;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 12px;
+  border: 1px solid #9bb537;
+  background-color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 48px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+  .hero-container {
+    max-width: 768px;
+  }
+}
+
+.title {
+  width: 446px;
+  margin-bottom: 16px;
+}
+
+.hero-link {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 36px;
+
+  text-align: left;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+  width: 408px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* desctop */
+.container {
+  max-width: 1104px;
+  padding: 0 12px;
+}
+
+/* @media screen and (min-width: 1200px)  */
+.hero-container {
+  align-items: center;
+  display: flex;
+  overflow: visible;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  font-size: 36px;
+}
+
+.hero-title {
+  font-size: 36px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 32px;
+  width: 408px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
