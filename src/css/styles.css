@@ -45,6 +45,13 @@
   padding: 0 100px;
 }
 
+.section-recipe {
+  gap: 64px;
+  padding-left: 100;
+  padding-right: 99;
+  display: flex;
+}
+
 @media screen and (max-width: 767px) {
   .container {
     max-width: 100%;

@@ -13,21 +13,24 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body id="bodyElement">
-    <div class="container">
+    <header class="container">
       <include src="./partials/header.html"></include>
-    </div>
+    </header>
     <main>
-      <div class="container">
-        <include src="./partials/hero.html"></include>
-      </div>
-      <div class="container">
-        <include src="./partials/category.html"></include>
-        <include src="./partials/popular.html"></include>
-      </div>
-      <div class="container">
-        <include src="./partials/recipe.html"></include>
-        <include src="./partials/search.html"></include>
-      </div>
+      <section class="section">
+        <div class="container">
+          <include src="./partials/hero.html"></include>
+        </div>
+        <section class="section-recipe container">
+          <div>
+            <include src="./partials/category.html"></include>
+            <include src="./partials/popular.html"></include>
+          </div>
+            <include src="./partials/recipe.html"></include>
+            <include src="./partials/search.html"></include>
+          </div>
+        </section>
+      </section>
     </main>
     <include src="./partials/up-scroll.html"></include>
     <script type="module" src="./index.js"></script>
