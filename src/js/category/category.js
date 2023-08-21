@@ -91,7 +91,7 @@ otherFilters.forEach(filter => {
 });
 
 if (allCategoriesButton) {
-  allCategoriesButton.addEventListener('mouseover', () => {
+  allCategoriesButton.addEventListener('click', () => {
     allCategoriesButton.classList.add('active-category');
   });
 
