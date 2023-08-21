@@ -9,6 +9,7 @@
 @import './layouts/category.css';
 @import './search/search.css';
 @import './search/media.css';
+@import './layouts/up-scroll';
 @import './common.css';
 
 @font-face {
