@@ -11,9 +11,8 @@
 @import './search/search.css';
 @import './search/media.css';
 @import './layouts/up-scroll';
-@import './footer/footer.css';
-@import './footer/media.css';
 @import './common.css';
+
 
 @font-face {
   font-family: 'Inter';
