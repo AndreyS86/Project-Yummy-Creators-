@@ -1,4 +1,5 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
+import { oopsDivEl } from './oops-favorites.js';
 
 export function localStorageSet(dishArrBack) {
   let arrLocStorAdd;
@@ -15,8 +16,13 @@ export function localStorageSet(dishArrBack) {
     dishArrMarkup.push(objBack);
   }
 
-  markupCardFavorites(dishArrMarkup);
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
+  if (!localStorageGet().length) {
+    oopsDivEl.classList.remove('visually-hidden');
+  } else {
+    markupCardFavorites(dishArrMarkup);
+    oopsDivEl.classList.add('visually-hidden');
+  }
 }
 
 export function localStorageGet() {
