@@ -1,4 +1,6 @@
 @import './_utils';
+@import './footer/footer.css';
+@import './footer/media.css';
 @import './layouts/_favorites.css';
 @import './layouts/_header.css';
 @import './layouts/dark_theme.css';
@@ -12,7 +14,6 @@
 @import './search/media.css';
 @import './layouts/up-scroll';
 @import './common.css';
-
 
 @font-face {
   font-family: 'Inter';

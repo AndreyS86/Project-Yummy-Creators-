@@ -6,8 +6,6 @@ import './js/search/search.js';
 import './js/header/activePage.js';
 import './js/header/mobMenu.js';
 import './js/header/darkTheme.js';
-import './js/favorites-hero/favorites-button.js';
-import './js/favorites-recipe/favorites-recipe.js';
 import './js/hero/hero.js';
 import './js/scroll/up-scroll.js';
 import './js/footer/footer.js';
