@@ -5,6 +5,7 @@
 @import './layouts/_hero.css';
 @import './layouts/recipe';
 @import './layouts/favorites-recipe';
+@import './layouts/favorites-hero.css';
 @import './layouts/popular';
 @import './layouts/category.css';
 @import './search/search.css';
