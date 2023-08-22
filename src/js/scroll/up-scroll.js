@@ -2,7 +2,7 @@ const upScrollBtnEl = document.querySelector('.upscroll-btn');
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY || document.documentElement.scrollTop;
-  scrollY > 200 ? scrollBtnOn(upScrollBtnEl) : scrollBtnOff(upScrollBtnEl);
+  scrollY > 300 ? scrollBtnOn(upScrollBtnEl) : scrollBtnOff(upScrollBtnEl);
 });
 
 function onScrollGalleryStart() {

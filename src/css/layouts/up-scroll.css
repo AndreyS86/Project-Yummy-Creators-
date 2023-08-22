@@ -1,5 +1,5 @@
 .upscroll-btn {
-  padding: 0;
+  padding: 10px;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -43,8 +43,8 @@
   }
 }
 
-.icon-uparrow {
-  /* fill: #9BB537; */
+.icon-arrow {
+  fill: #9bb537;
   stroke-width: 2px;
   stroke: #161616;
 }
