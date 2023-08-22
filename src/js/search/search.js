@@ -63,11 +63,13 @@ export function updateOutput() {
       formTime.value = parsedSettings.time || "";
       formArea.value = parsedSettings.area || "";
       formIngredients.value = parsedSettings.ingredient || "";
+      if (inputForm.value || formTime.value || formArea.value || formIngredients.value) {
+        getRecipes();
+      }
     }
     if (inputForm.value.length > 1) {
         inputFormClose.style.display = 'block';
     }
-    getRecipes();
 }
 
  function form_searh(evt) {
