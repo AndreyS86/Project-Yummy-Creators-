@@ -1,4 +1,6 @@
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import Swiper from 'swiper';
+import SlimSelect from 'slim-select';
 import './js/category/category.js';
 import './js/search/search.js';
 import './js/header/activePage.js';
