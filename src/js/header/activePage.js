@@ -6,18 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   navLinks.forEach(link => {
     if (link.getAttribute('href').endsWith(currentPage)) {
       link.classList.add('nav-link-active');
-      const currentSpan = document.createElement('span');
-      currentSpan.classList.add('current');
-      link.appendChild(currentSpan);
-
-      link.addEventListener('focus', () => {
-        link.classList.add('nav-link-active');
-      });
-
-      link.addEventListener('blur', () => {
-        link.classList.remove('nav-link-active');
-      });
     }
+
+    link.addEventListener('focus', () => {
+      link.classList.add('nav-link-active');
+    });
+
+    link.addEventListener('blur', () => {
+      link.classList.remove('nav-link-active');
+    });
   });
 });
 

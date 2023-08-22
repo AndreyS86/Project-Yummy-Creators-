@@ -1,5 +1,12 @@
-.header {
-  padding-top: 24px;
+a {
+  text-decoration: none;
+}
+
+.container {
+  min-width: 320px;
+  margin: 0 auto;
+  max-width: 375px;
+  padding: 0 20px;
 }
 
 .navigation {
@@ -13,7 +20,7 @@
 .navigation a::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -22,17 +29,14 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.navigation a:hover::before,
-.navigation a:focus::before {
-  transform: scaleX(1);
-}
-
 .header-nav-links {
   font-family: Inter;
   color: #050505;
   font-size: 12px;
   font-weight: 500;
   font-size: 12px;
+  padding-top: 43px;
+  padding-bottom: 43px;
 }
 
 .header-nav-links:hover,
@@ -52,6 +56,8 @@
   font-weight: 600;
   line-height: calc(18 / 16);
   letter-spacing: -0.64px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .logo-treats {
@@ -61,6 +67,8 @@
   font-weight: 600;
   line-height: calc(18 / 16);
   letter-spacing: -0.64px;
+  padding-top: 43px;
+  padding-bottom: 43px;
 }
 
 .header-items {
@@ -79,6 +87,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: transparent;
 }
 
 .shopping-icon-use:hover {
@@ -95,6 +106,7 @@
   border: none;
   padding: 0;
   margin: 0;
+  background-color: transparent;
 }
 
 .mobile-menu-icon {
@@ -139,10 +151,10 @@
 .header-slider:before {
   position: absolute;
   content: '';
-  height: 17px;
-  width: 17px;
-  left: 2px;
-  bottom: 2px;
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
   background-color: #f8f8f8;
   transition: 0.4s;
   border-radius: 50%;
@@ -167,7 +179,6 @@
   position: fixed;
   z-index: 999;
   top: 0;
-
   right: 0;
   transform: translateX(300%);
   transition: transform 0.3s ease-in-out;
@@ -250,10 +261,10 @@
 .slider:before {
   position: absolute;
   content: '';
-  height: 15px;
-  width: 15px;
-  left: 4px;
-  bottom: 3px;
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
   background-color: #f8f8f8;
   transition: 0.4s;
   border-radius: 50%;
@@ -268,42 +279,13 @@ input:checked + .slider:before {
   box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
 }
 
-.current::after {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #9bb537;
-}
-
 .nav-link-active {
   color: #9bb537;
-}
-
-.nav-link-active .current {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #9bb537;
 }
 
 .mob-nav-link-active {
   color: #050505;
   position: relative;
-}
-
-.mob-nav-link-active::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #050505;
-  transition: background-color 0.3s;
 }
 
 .shopping-icon-use {
@@ -316,12 +298,14 @@ input:checked + .slider:before {
     max-width: 768px;
     padding: 0 32px;
   }
-  .header {
-    padding-top: 28px;
+
+  .header-nav-links {
+    padding-top: 31px;
+    padding-bottom: 31px;
   }
 
   .navigation {
-    display: inline;
+    display: flex;
     position: relative;
   }
 
@@ -329,12 +313,16 @@ input:checked + .slider:before {
     font-size: 18px;
     line-height: calc(20 / 18);
     letter-spacing: -0.72px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .logo-treats {
     font-size: 18px;
     line-height: calc(20 / 18);
     letter-spacing: -0.72px;
+    padding-top: 43px;
+    padding-bottom: 43px;
   }
   .header-items {
     justify-content: space-between;
@@ -359,10 +347,6 @@ input:checked + .slider:before {
 @media screen and (min-width: 1280px) {
   .container {
     max-width: 1104px;
-    padding: 0 12px;
-  }
-
-  .header {
-    padding-top: 40px;
+    padding: 0 100px;
   }
 }
