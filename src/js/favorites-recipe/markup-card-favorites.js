@@ -1,4 +1,5 @@
 import { localStorageGet } from './local-storage-favorites.js';
+import { oopsDivEl } from './oops-favorites.js';
 
 const dishListEl = document.querySelector('.favorites-cards');
 
@@ -91,8 +92,10 @@ function onHeartClick(e) {
         arrLocal.splice(idx, 1);
         liElement.remove();
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
+        if (!localStorageGet().length) {
+          oopsDivEl.classList.remove('visually-hidden');
+        }
       }
-      return;
     });
   }
 }
@@ -108,5 +111,9 @@ window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
   }
-  markupCardFavorites(localStorageGet());
+  if (!localStorageGet().length) {
+    oopsDivEl.classList.remove('visually-hidden');
+  } else {
+    markupCardFavorites(localStorageGet());
+  }
 });
