@@ -1,5 +1,7 @@
 .hero-list {
-  padding-top: 91px;
+  /* mobile */
+  padding-top: 64px;
+  padding-bottom: 40px;
 }
 
 .hero-container {
@@ -86,6 +88,14 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hero-list {
+    /* tablet */
+    padding-top: 65px;
+    padding-bottom: 40px;
+  }
+}
+
 .title {
   width: 446px;
   margin-bottom: 16px;
@@ -134,6 +144,12 @@
   overflow: visible;
 }
 
+.hero-list {
+  /* desctop */
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
 .title {
   display: flex;
   flex-wrap: wrap;
@@ -160,4 +176,25 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+/* dark-theme */
+
+.dark-theme .hero-title {
+  color: #fff;
+}
+
+.dark-theme .hero-subtitle {
+  color: #fff;
+}
+.dark-theme .hero-btn {
+  color: #fff;
+  background: #161616;
+}
+.dark-theme .swiper-pagination-bullet {
+  color: #fff;
+}
+
+.dark-theme .swiper-pagination-bullet-active {
+  color: #9bb537;
 }
