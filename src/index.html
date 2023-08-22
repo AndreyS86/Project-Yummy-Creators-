@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TastyTreats</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body id="bodyElement">
-    <header class="container">
-      <include src="./partials/header.html"></include>
-    </header>
-    <main>
-      <section class="section">
-        <div class="container">
-          <include src="./partials/hero.html"></include>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyTreats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body id="bodyElement">
+  <header class="container">
+    <include src="./partials/header.html"></include>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container">
+        <include src="./partials/hero.html"></include>
+      </div>
+      <section class="section-recipe container">
+        <div>
+          <include src="./partials/category.html"></include>
+          <include src="./partials/popular.html"></include>
         </div>
-        <section class="section-recipe container">
-          <div>
-            <include src="./partials/category.html"></include>
-            <include src="./partials/popular.html"></include>
-          </div>
-            <include src="./partials/recipe.html"></include>
-            <include src="./partials/search.html"></include>
-          </div>
-        </section>
+        <include src="./partials/recipe.html"></include>
+        <include src="./partials/search.html"></include>
+        </div>
       </section>
-    </main>
-    <include src="./partials/up-scroll.html"></include>
-    <script type="module" src="./index.js"></script>
-  </body>
+    </section>
+  </main>
+  <include src="./partials/modal.html"></include>
+  <include src="./partials/up-scroll.html"></include>
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>
