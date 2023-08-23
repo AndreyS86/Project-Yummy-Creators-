@@ -1,24 +1,33 @@
+import { localStorageGet } from '../favorites-recipe/local-storage-favorites.js';
+import { markupCardFavorites } from '../favorites-recipe/markup-card-favorites.js';
+import { dishListEl } from '../favorites-recipe/markup-card-favorites.js';
+import { updatePageShowEvent } from '../favorites-recipe/markup-card-favorites.js';
+
+// Виклик функції для завантаження даних з localStorage та відображення кнопок категорій
 getDataFromLocalStorage();
 
-// Створюємо функцію, яка дістає дані з локального сховища
+// Функція, яка дістає унікальні категорії з даних
+function getCategoriesFromData(data) {
+  const categoryMap = new Map();
+  data.forEach(item => {
+    if (!categoryMap.has(item.category)) {
+      categoryMap.set(item.category, true);
+    }
+  });
+  return Array.from(categoryMap.keys());
+}
+
+// Функція для отримання та відображення даних з localStorage
 export function getDataFromLocalStorage() {
   const storageData = localStorage.getItem('dishLocalKey');
 
   if (storageData) {
     const parsedData = JSON.parse(storageData);
-    const categoryMap = new Map(); // Створюємо об'єкт Map для відстеження створених кнопок
+    const uniqueCategories = getCategoriesFromData(parsedData);
 
-    parsedData.forEach(item => {
-      if (!categoryMap.has(item.category)) {
-        categoryMap.set(item.category, true);
-      }
-    });
-
-    const uniqueCategories = Array.from(categoryMap.keys());
-
-    // Перевіряємо чи існують категорії, і якщо так, то створюємо кнопки
+    removeButtons(); // Видаляємо попередні кнопки
     if (uniqueCategories.length > 0) {
-      createButtonMarkup(uniqueCategories);
+      createButtonMarkup(uniqueCategories); // Створюємо нові кнопки
     }
   } else {
     console.log('No data found in localStorage.');
@@ -26,7 +35,7 @@ export function getDataFromLocalStorage() {
   }
 }
 
-// Функція, яка створює розмітку кнопок
+// Функція для створення розмітки кнопок категорій
 function createButtonMarkup(categories) {
   const categoryContainer = document.getElementById('category-buttons');
   categoryContainer.classList.add('category-buttons');
@@ -46,7 +55,13 @@ function createButtonMarkup(categories) {
   });
 }
 
-// Функція обробки кліку на кнопку
+// Додатковий код для обробки кліку на кнопку
+
+function removeButtons() {
+  const categoryContainer = document.getElementById('category-buttons');
+  categoryContainer.innerHTML = ''; // Очищаємо контейнер з кнопками
+}
+
 function handleCategoryClick(category) {
   const buttons = document.querySelectorAll('.fav-button');
   buttons.forEach(button => {
@@ -56,5 +71,27 @@ function handleCategoryClick(category) {
   const clickedButton = event.target;
   clickedButton.classList.add('active');
 
-  // Додатковий код для обробки кліку на кнопку
+  // Отримуємо дані з локального сховища
+  const arrLocal = localStorageGet();
+
+  // Фільтруємо рецепти за вибраною категорією
+  const filteredRecipes = arrLocal.filter(item => {
+    if (category === 'All') {
+      return true; // Відображати всі рецепти
+    } else {
+      return item.category === category;
+    }
+  });
+
+  // Оновлюємо список рецептів на сторінці
+  updateRecipeList(filteredRecipes);
 }
+
+// Функція для оновлення списку рецептів на сторінці
+function updateRecipeList(recipes) {
+  dishListEl.innerHTML = ''; // Очищаємо список перед оновленням
+  markupCardFavorites(recipes); // Створюємо розмітку для відфільтрованих рецептів
+}
+
+// Рендерінг сторінки після перезавантаження //
+updatePageShowEvent();

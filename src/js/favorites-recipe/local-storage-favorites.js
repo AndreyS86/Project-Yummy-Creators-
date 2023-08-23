@@ -1,5 +1,6 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
 import { oopsDivEl } from './oops-favorites.js';
+import { getDataFromLocalStorage } from '../favorites-hero/favorites-button.js';
 
 export function localStorageSet(dishArrBack) {
   let arrLocStorAdd;
@@ -17,6 +18,7 @@ export function localStorageSet(dishArrBack) {
   }
 
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
+  getDataFromLocalStorage(); // визиваю ф-ю створення кнопок
   if (!localStorageGet().length) {
     oopsDivEl.classList.remove('visually-hidden');
   } else {

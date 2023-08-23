@@ -1,6 +1,8 @@
+.fav-container {
+  display: block;
+}
 .category-buttons {
   display: flex;
-
   padding-top: 40px;
   padding-bottom: 24px;
   gap: 12px;
