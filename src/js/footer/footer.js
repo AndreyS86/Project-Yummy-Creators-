@@ -44,7 +44,7 @@ window.addEventListener('keydown', function(e) {
 });
 window.addEventListener('click', function(e) {
     console.dir(e.target.className)
-    if (e.target.className === 'footer-contaiter') {
+    if ((e.target.className === 'footer-contaiter') || (e.target.className === 'footer-modal active')) {
         footerModal.classList.remove('active');
         footerFoto.innerHTML = '';
     }
