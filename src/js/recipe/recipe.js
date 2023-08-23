@@ -3,105 +3,27 @@ import { getImagesRecipes } from './recipe-api';
 
 const refs = {
   recipeCardList: document.querySelector('.recipe__card--list'),
-  likeBtn: document.querySelector('.recipe__more--button'),
-  likeSvg: document.querySelector(`.recipe__like--svg`),
+  recipeBlock: document.querySelector('.recipe__card'),
 };
 
 refs.recipeCardList.addEventListener('click', addFavoriteRecipes);
 document.addEventListener('DOMContentLoaded', function () {
   onImagesRecipesMarkup();
-  // saveLocalStorage();
-  // getLocalStorage();
 });
-
-// if (localStorage.getItem('Id')) {
-//   // Ключ "Id" есть в локальном хранилище
-//   const idValue = localStorage.getItem('Id');
-//   selectedId = new Set(idValue);
-
-//   // Выполните действия с использованием значения "Id"
-//   console.log('Значение Id:', idValue);
-//   console.log(selectedId);
-// } else {
-//   // Ключ "Id" отсутствует в локальном хранилище
-//   console.log('Ключ Id отсутствует в локальном хранилище');
-// }
 
 let currentPage = 1;
 let totalPageLocc = 0;
-let newselectedId;
+let limit = 8;
 
-const selectedId = new Set();
-
-function onImagesRecipesMarkup(e) {
-  // e.preventDefault();
-
-  // refs.recipeCardList.innerHTML = '';
-
-  // function getSizeScreen() {
-  //   const bodyWidth = document.body.clientWidth;
-  //   console.log(`Ширина body: ${bodyWidth}px`);
-
-  //   let quantityImg = 0;
-  //   if (bodyWidth < 768) {
-  //     return quantityImg = 6;
-  //   } else if (bodyWidth < 1280) {
-  //     return quantityImg = 8;
-  //   } else {
-  //     return quantityImg = 9;
-  //   }
-
-  // }
-  // console.log(getSizeScreen());
-
-  getImagesRecipes(currentPage).then(data => {
+function onImagesRecipesMarkup() {
+  getImagesRecipes(currentPage, requalityImage()).then(data => {
     if (data.results.length !== 0) {
       createMarkup(data.results);
       totalPageLocc = Math.ceil(data.totalPages / 9);
-      // addLikeRestart();
-      newselectedId = getLocalStorage();
-      // console.log(newselectedId);
     } else {
       console.log('results DONT OK');
-      Notiflix.Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
-      );
     }
   });
-}
-
-function normalizeStarMarkup(rating) {
-  return Math.round(rating);
-}
-
-function descriptionCuter(description, maxLength) {
-  console.log(maxLength, 'maxLength');
-  if (description.length <= maxLength) {
-    return description;
-  } else {
-    return description.substring(0, maxLength - 3) + '...';
-  }
-}
-
-function addFavoriteRecipes(e) {
-  const liElement = e.target.closest('li');
-  const id = liElement.id;
-  const hasContains = e.target.classList.contains('like__marked--svg');
-
-  if (e.target.nodeName !== 'svg') {
-    console.log("!e.target.nodeName === 'svg'");
-    return;
-  }
-
-  if (hasContains) {
-    selectedId.delete(id);
-  } else {
-    selectedId.add(liElement.id);
-  }
-
-  e.target.classList.toggle('like__marked--svg');
-  console.log(selectedId);
-  saveLocalStorage(selectedId);
 }
 
 function createMarkup(items) {
@@ -151,17 +73,14 @@ function createMarkup(items) {
           />
           <div class="general__information">
             <div class="recipe__card--text">
-              <h3 class="recipe__card--title">${descriptionCuter(
-                title,
-                21
-              )}</h3>
+              <h3 class="recipe__card--title">${titleCuter(title)}</h3>
               <p class="recipe__card--description">${descriptionCuter(
                 description,
                 80
               )}</p>
             </div>
             <div class="recipe__card--rating">
-              <p class="rating__value--text">${rating}</p>
+              <p class="rating__value--text">${normalizeValueRating(rating)}</p>
               <div class="rating__star" data-total-value="${normalizeStarMarkup(
                 rating
               )}">
@@ -234,40 +153,134 @@ function createMarkup(items) {
     )
     .join('');
   refs.recipeCardList.insertAdjacentHTML('beforeend', markup);
+  reloadFavoriteRecipes();
 }
 
-function saveLocalStorage(selectedId) {
-  const selectedIdArray = Array.from(selectedId); // Преобразовываем Set в массив
-  const selectedIdAsString = JSON.stringify(selectedIdArray); // Преобразовываем массив в строку JSON
-  localStorage.setItem('Id', selectedIdAsString); // Сохраняем строку JSON в localStorage
-}
+function addFavoriteRecipes(e) {
+  const cardWithLike = e.target.closest('.recipe__card--item');
+  const btnWithLike = e.target.parentNode.querySelector(
+    '.recipe__like--button'
+  );
 
-function getLocalStorage() {
-  const selectedIdAsString = localStorage.getItem('Id');
-  const likeSvgList = document.querySelectorAll('.like__svg');
-  let selectedIdArray = [];
-
-  if (selectedIdAsString) {
-    selectedIdArray = JSON.parse(selectedIdAsString); // Преобразовываем строку JSON в массив
+  if (!btnWithLike) {
+    return; // Exit the function if the button was not found
   }
 
-  newselectedId = new Set(selectedIdArray);
+  const swgWithLike = e.target.parentNode.querySelector('.recipe__like--svg');
 
-  console.log(selectedIdArray);
-  console.log(selectedId);
+  const hasSvgLike = swgWithLike.classList.contains('like__marked--svg');
 
-  likeSvgList.forEach(likeSvg => {
-    const liElement = likeSvg.closest('li');
-    console.log(liElement);
+  if (e.target === btnWithLike && !hasSvgLike) {
+    swgWithLike.classList.add('like__marked--svg');
+    setLocalStorage(cardWithLike.id);
+  } else if (e.target === btnWithLike && hasSvgLike) {
+    swgWithLike.classList.remove('like__marked--svg');
+    updateLocalStorage(cardWithLike.id);
+  }
+}
 
-    console.log('liElement', liElement);
-    console.log('liElement.id', liElement.id);
-    console.log('selectedIdArray', selectedIdArray);
+function reloadFavoriteRecipes(params) {
+  const storedFavorites =
+    JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
 
-    if (liElement && selectedIdArray.includes(liElement.id)) {
-      likeSvg.classList.add('like__marked--svg');
-    } else {
-      likeSvg.classList.remove('like__marked--svg');
+  const cardWithLike = refs.recipeCardList.querySelectorAll(
+    '.recipe__card--item'
+  );
+
+  // console.log('cardWithLike', cardWithLike);
+
+  for (let i = 0; i < cardWithLike.length; i++) {
+    const swgWithLike = cardWithLike[i].querySelector('.recipe__like--svg');
+    // console.log('swgWithLike', swgWithLike);
+    for (let j = 0; j < storedFavorites.length; j++) {
+      if (cardWithLike[i].id === storedFavorites[j]) {
+        console.log(cardWithLike[i].id);
+        swgWithLike.classList.add('like__marked--svg');
+      }
     }
-  });
+  }
+  return storedFavorites;
+}
+
+function setLocalStorage(idToAdd) {
+  // Получение сохраненного массива из localStorage
+  const storedFavorites =
+    JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
+  // Проверка, есть ли ID уже в массиве
+  if (!storedFavorites.includes(idToAdd)) {
+    // Добавление ID в массив
+    storedFavorites.push(idToAdd);
+    // Обновление массива в localStorage
+    localStorage.setItem('favoriteRecipesId', JSON.stringify(storedFavorites));
+  }
+}
+
+function updateLocalStorage(idToRemove) {
+  // Получение сохраненного массива из localStorage
+  const storedFavorites =
+    JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
+  // Удаление ID из массива
+  const updatedFavorites = storedFavorites.filter(id => id !== idToRemove);
+  // Обновление массива в localStorage
+  localStorage.setItem('favoriteRecipesId', JSON.stringify(updatedFavorites));
+}
+
+function normalizeStarMarkup(rating) {
+  return Math.round(rating);
+}
+
+function normalizeValueRating(rating) {
+  return rating.toFixed(1);
+}
+
+function descriptionCuter(description, maxLength) {
+  const bodyWidth = document.body.offsetWidth;
+  if (bodyWidth >= 1280) {
+    maxLength = 60;
+  } else if (bodyWidth >= 768) {
+    maxLength = 55;
+  } else if (bodyWidth >= 335 || bodyWidth <= 335) {
+    maxLength = 80;
+  }
+
+  // console.log(description.length);
+  if (description.length <= maxLength) {
+    return description;
+  } else {
+    return description.substring(0, maxLength - 3) + '...';
+  }
+}
+
+function titleCuter(title, maxLength) {
+  const bodyWidth = document.body.offsetWidth;
+  if (bodyWidth >= 1280) {
+    maxLength = 22;
+  } else if (bodyWidth >= 768) {
+    maxLength = 20;
+  } else if (bodyWidth >= 335 || bodyWidth <= 335) {
+    maxLength = 27;
+  }
+
+  // console.log(title.length);
+  if (title.length <= maxLength) {
+    return title;
+  } else {
+    return title.substring(0, maxLength - 3) + '...';
+  }
+}
+
+function requalityImage() {
+  const bodyWidth = document.body.offsetWidth;
+  let limitPages = 9;
+
+  if (bodyWidth >= 1280) {
+    limitPages = 9;
+  } else if (bodyWidth >= 768) {
+    limitPages = 8;
+  } else if (bodyWidth >= 335 || bodyWidth <= 335) {
+    limitPages = 6;
+  }
+
+  // console.log(limitPages);
+  return limitPages;
 }
