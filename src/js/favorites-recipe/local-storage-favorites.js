@@ -3,14 +3,8 @@ import { oopsDivEl } from './oops-favorites.js';
 import { getDataFromLocalStorage } from '../favorites-hero/favorites-button.js';
 
 export function localStorageSet(dishArrBack) {
-  let arrLocStorAdd;
+  let arrLocStorAdd = [];
   let dishArrMarkup = [];
-
-  if (localStorageGet() === null) {
-    arrLocStorAdd = [];
-  } else {
-    arrLocStorAdd = localStorageGet();
-  }
 
   for (const objBack of dishArrBack) {
     arrLocStorAdd.push(objBack);
