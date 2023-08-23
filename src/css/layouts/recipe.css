@@ -22,8 +22,9 @@
     border-radius: 8px;
     border-radius: 8px;
     overflow: hidden;
-    background: linear-gradient(1deg, rgba(5, 5, 5, .6) 0%, rgba(5, 5, 5, 0) 100%);
-
+    background-image: linear-gradient(1deg,
+                rgba(5, 5, 5, 0.6) 0%,
+                rgba(5, 5, 5, 0) 100%);
 }
 
 .recipe__like--button {
@@ -38,6 +39,15 @@
 .recipe__like--svg {
     display: block;
     pointer-events: none;
+    transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recipe__like--button:hover .recipe__like--svg{
+    fill: #ff0000;
+    stroke-width: 2px;
+    animation: animateHeart 2000ms infinite 0ms;
+
 }
 
 .like__marked--svg {

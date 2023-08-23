@@ -1,11 +1,15 @@
 import Notiflix from 'notiflix';
 import { getImagesRecipes } from './recipe-api';
+import { OpenModal } from '../modal/modal-recipes-rating.js';
+// import localStorageGet from '../favorites-recipe/local-storage-favorites';
+
 
 const refs = {
   recipeCardList: document.querySelector('.recipe__card--list'),
   recipeBlock: document.querySelector('.recipe__card'),
 };
 
+refs.recipeCardList.addEventListener('click', onOpenModal);
 refs.recipeCardList.addEventListener('click', addFavoriteRecipes);
 document.addEventListener('DOMContentLoaded', function () {
   onImagesRecipesMarkup();
@@ -180,21 +184,33 @@ function addFavoriteRecipes(e) {
 }
 
 function reloadFavoriteRecipes(params) {
-  const storedFavorites =
-    JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
-
   const cardWithLike = refs.recipeCardList.querySelectorAll(
     '.recipe__card--item'
   );
+
+  const storedFavorites =
+    JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
+
+  const remouteObjFavoriteId = JSON.parse(localStorage.getItem('dishLocalKey'));
+  const remouteArrFavoriteId = remouteObjFavoriteId.map(itemId => {
+    return itemId._id;
+  });
+
+  const generalFavoriteId = [...storedFavorites, ...remouteArrFavoriteId];
+
+  console.log('storedFavorites', storedFavorites);
+  console.log('dishLocalKeyGet', remouteArrFavoriteId);
+  console.log('generalFavoriteId', generalFavoriteId);
+
 
   // console.log('cardWithLike', cardWithLike);
 
   for (let i = 0; i < cardWithLike.length; i++) {
     const swgWithLike = cardWithLike[i].querySelector('.recipe__like--svg');
     // console.log('swgWithLike', swgWithLike);
-    for (let j = 0; j < storedFavorites.length; j++) {
-      if (cardWithLike[i].id === storedFavorites[j]) {
-        console.log(cardWithLike[i].id);
+    for (let j = 0; j < generalFavoriteId.length; j++) {
+      if (cardWithLike[i].id === generalFavoriteId[j]) {
+        // console.log(cardWithLike[i].id);
         swgWithLike.classList.add('like__marked--svg');
       }
     }
@@ -219,10 +235,25 @@ function updateLocalStorage(idToRemove) {
   // Получение сохраненного массива из localStorage
   const storedFavorites =
     JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
+
   // Удаление ID из массива
   const updatedFavorites = storedFavorites.filter(id => id !== idToRemove);
+
   // Обновление массива в localStorage
   localStorage.setItem('favoriteRecipesId', JSON.stringify(updatedFavorites));
+}
+
+function onOpenModal(e) {
+  const targetElement = e.target;
+
+  if (!targetElement.classList.contains('recipe__more--button')) {
+    e.preventDefault();
+    return;
+  }
+
+  const cardWithLike = targetElement.closest('.recipe__card--item');
+  // console.log(cardWithLike.id);
+  OpenModal(cardWithLike.id);
 }
 
 function normalizeStarMarkup(rating) {
