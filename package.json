@@ -24,6 +24,7 @@
     "notiflix": "^3.2.6",
     "simplelightbox": "^2.14.1",
     "slim-select": "^2.6.0",
+    "smooth-scrollbar": "^8.8.4",
     "swiper": "^10.2.0"
   },
   "devDependencies": {
