@@ -13,3 +13,5 @@ import './js/modal/ranging-modal.js';
 import './js/scroll/up-scroll.js';
 import './js/footer/footer.js';
 import './js/footer/gallery-items.js';
+import './js/recipe/recipe-api.js';
+import './js/recipe/recipe.js';

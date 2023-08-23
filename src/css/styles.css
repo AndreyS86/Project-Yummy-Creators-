@@ -5,15 +5,15 @@
 @import './layouts/_header.css';
 @import './layouts/dark_theme.css';
 @import './layouts/_hero.css';
-@import './layouts/recipe';
-@import './layouts/favorites-recipe';
+@import './layouts/recipe.css';
+@import './layouts/favorites-recipe.css';
 @import './layouts/favorites-hero.css';
-@import './layouts/popular';
+@import './layouts/popular.css';
 @import './layouts/category.css';
 @import './search/search.css';
 @import './search/media.css';
 @import './components/modal.css';
-@import './layouts/up-scroll';
+@import './layouts/up-scroll.css';
 @import './common.css';
 
 @font-face {
