@@ -1,6 +1,6 @@
 @import './_utils';
-@import './footer/footer.css';
-@import './footer/media.css';
+/* @import './footer/footer.css';
+@import './footer/media.css'; */
 @import './layouts/_favorites.css';
 @import './layouts/_header.css';
 @import './layouts/dark_theme.css';
