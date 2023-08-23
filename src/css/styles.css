@@ -12,6 +12,7 @@
 @import './layouts/category.css';
 @import './search/search.css';
 @import './search/media.css';
+@import './components/modal.css';
 @import './layouts/up-scroll';
 @import './common.css';
 
@@ -35,6 +36,7 @@
   font-weight: 500;
   src: url('../fonts/Inter-Medium.woff2') format('woff2');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
