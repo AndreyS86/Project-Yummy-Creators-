@@ -15,3 +15,4 @@ import './js/scroll/up-scroll.js';
 import './js/footer/gallery-items.js';
 import './js/recipe/recipe-api.js';
 import './js/recipe/recipe.js';
+import './js/popular/popular.js';

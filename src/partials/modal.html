@@ -1,75 +1,90 @@
 <div class="backdrop-recipes is-hidden-modal">
-    <div id="scroll-rec" class="modal-recipes is-hidden-modal">
-        <div class="modal-recipes-js"></div>
-        <button class="close-modal">
-            <svg class="close-modal-ico" width="20" height="20">
-                <use href="./svg/symbol-defs.svg#icon-x"></use>
+  <div id="scroll-rec" class="modal-recipes is-hidden-modal">
+    <div class="modal-recipes-js"></div>
+    <button class="close-modal">
+      <svg class="close-modal-ico" width="20" height="20">
+        <use href="./svg/symbol-defs.svg#icon-x"></use>
+      </svg>
+    </button>
+    <div class="scroll-box"></div>
+    <button class="save-recipes-btn">Add to favorite</button>
+    <button class="give-rating-btn">Give a rating</button>
+  </div>
+
+  <div class="modal-rating is-hidden-modal">
+    <button class="close-modal close-rate-modal">
+      <svg class="close-modal-ico" width="20" height="20">
+        <use href="./svg/symbol-defs.svg#icon-x"></use>
+      </svg>
+    </button>
+    <b class="rate-modal-title">Rating</b>
+    <div class="rate-box">
+      <ul class="modal-rate-list">
+        <li class="item-modal-star">
+          <button type="button" class="rate-start-btn">
+            <svg class="modal-star-icon" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#rate-star"></use>
             </svg>
-        </button>
-        <div class="scroll-box"></div>
-        <button class="save-recipes-btn">Add to favorite</button>
-        <button class="give-rating-btn">Give a rating</button>
-    </div>
-
-
-
-    <div class="modal-rating is-hidden-modal">
-        <button class="close-modal close-rate-modal">
-            <svg class="close-modal-ico" width="20" height="20">
-                <use href="./svg/symbol-defs.svg#icon-x"></use>
+          </button>
+        </li>
+        <li class="item-modal-star">
+          <button type="button" class="rate-start-btn">
+            <svg class="modal-star-icon" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#rate-star"></use>
             </svg>
+          </button>
+        </li>
+        <li class="item-modal-star">
+          <button type="button" class="rate-start-btn">
+            <svg class="modal-star-icon" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#rate-star"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="item-modal-star">
+          <button type="button" class="rate-start-btn">
+            <svg class="modal-star-icon" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#rate-star"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="item-modal-star">
+          <button type="button" class="rate-start-btn">
+            <svg class="modal-star-icon" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#rate-star"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <form class="rate-form" data-id="">
+        <label class="rate-formfield">
+          <span class="rate-range-value">0.0</span>
+          <input
+            type="range"
+            min="0"
+            max="5"
+            value="0"
+            class="rate-range-input"
+            name="rating"
+          />
+        </label>
+        <label class="rate-formfield">
+          <input
+            type="text"
+            class="rate-email-input"
+            placeholder="Enter email"
+            name="email"
+          />
+        </label>
+        <button
+          type="submit"
+          name="send"
+          class="send-rating-btn"
+          disabled="true"
+        >
+          Send
         </button>
-        <b class="rate-modal-title">Rating</b>
-        <div class="rate-box">
-            <ul class="modal-rate-list">
-                <li class="item-modal-star">
-                    <button type="button" class="rate-start-btn">
-                        <svg class="modal-star-icon" width="24" height="24">
-                            <use href="./svg/symbol-defs.svg#rate-star"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li class="item-modal-star">
-                    <button type="button" class="rate-start-btn">
-                        <svg class="modal-star-icon" width="24" height="24">
-                            <use href="./svg/symbol-defs.svg#rate-star"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li class="item-modal-star">
-                    <button type="button" class="rate-start-btn">
-                        <svg class="modal-star-icon" width="24" height="24">
-                            <use href="./svg/symbol-defs.svg#rate-star"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li class="item-modal-star">
-                    <button type="button" class="rate-start-btn">
-                        <svg class="modal-star-icon" width="24" height="24">
-                            <use href="./svg/symbol-defs.svg#rate-star"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li class="item-modal-star">
-                    <button type="button" class="rate-start-btn">
-                        <svg class="modal-star-icon" width="24" height="24">
-                            <use href="./svg/symbol-defs.svg#rate-star"></use>
-                        </svg>
-                    </button>
-                </li>
-            </ul>
-            <form class="rate-form" data-id="">
-                <label class="rate-formfield">
-                    <span class="rate-range-value">0.0</span>
-                    <input type="range" min="0" max="5" value="0" class="rate-range-input" name="rating" />
-                </label>
-                <label class="rate-formfield">
-                    <input type="text" class="rate-email-input" placeholder="Enter email" name="email" />
-                </label>
-                <button type="submit" name="send" class="send-rating-btn" disabled="true">
-                    Send
-                </button>
-            </form>
-        </div>
+      </form>
     </div>
+  </div>
 </div>
