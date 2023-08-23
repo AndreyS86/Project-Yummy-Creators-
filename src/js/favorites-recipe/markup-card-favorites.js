@@ -1,7 +1,8 @@
 import { localStorageGet } from './local-storage-favorites.js';
 import { oopsDivEl } from './oops-favorites.js';
+import { getDataFromLocalStorage } from '../favorites-hero/favorites-button.js';
 
-const dishListEl = document.querySelector('.favorites-cards');
+export const dishListEl = document.querySelector('.favorites-cards');
 
 export function markupCardFavorites(dishArr) {
   if (dishArr !== null) {
@@ -92,6 +93,9 @@ function onHeartClick(e) {
         arrLocal.splice(idx, 1);
         liElement.remove();
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
+
+        getDataFromLocalStorage(); // при зміні для стирання кнопок категорій
+
         if (!localStorageGet().length) {
           oopsDivEl.classList.remove('visually-hidden');
         }
@@ -107,13 +111,15 @@ function onSeeRecipeClick(e) {
 }
 
 // Рендерінг сторінки після перезавантаження //
-window.addEventListener('pageshow', function () {
-  if (localStorageGet() === null) {
-    return;
-  }
-  if (!localStorageGet().length) {
-    oopsDivEl.classList.remove('visually-hidden');
-  } else {
-    markupCardFavorites(localStorageGet());
-  }
-});
+export function updatePageShowEvent() {
+  window.addEventListener('pageshow', function () {
+    if (localStorageGet() === null) {
+      return;
+    }
+    if (!localStorageGet().length) {
+      oopsDivEl.classList.remove('visually-hidden');
+    } else {
+      markupCardFavorites(localStorageGet());
+    }
+  });
+}
