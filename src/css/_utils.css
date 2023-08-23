@@ -10,6 +10,10 @@ p {
   margin: 0;
 }
 
+body {
+  background-color: #f8f8f8;
+}
+
 button {
   padding: 0;
   border: none;
@@ -21,7 +25,6 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 
 .link {
   text-decoration: none;
