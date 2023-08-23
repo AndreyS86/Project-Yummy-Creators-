@@ -22,7 +22,7 @@ const refs = {
 };
 
 //OpenModal(currentBtn): Эта функция вызывается при открытии модального окна для конкретного рецепта. Внутри функции добавляются обработчики событий на кнопки и другие элементы модального окна. Также функция обновляет информацию о рецепте, проверяет, добавлен ли рецепт в избранное, и управляет стилями элементов.
-export function OpenModal(currentBtn) {
+export function OpenModal(id) {
   refs.closeModalBtn.addEventListener('click', CloseModal);
   refs.backdropModal.addEventListener('click', CloseOnClick);
   refs.giveRatingBtn.addEventListener('click', OpenRateModal);
@@ -30,8 +30,8 @@ export function OpenModal(currentBtn) {
 
   refs.backdropModal.classList.remove('is-hidden-modal');
   refs.mainModalRecipes.classList.remove('is-hidden-modal');
-  refs.rateForm.dataset.id = currentBtn.dataset.id;
-  generateRecipe(currentBtn.dataset.id);
+  refs.rateForm.dataset.id = id;
+  generateRecipe(id);
   ToggleScroll();
 
   //Получаем содержимое хранилища браузера с ключом 'favorites'
