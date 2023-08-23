@@ -1,0 +1,241 @@
+.recipe__card {
+    margin: auto;
+    width: 335px;
+}
+
+.recipe__card--list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+
+}
+
+.recipe__card--item {
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+
+    width: 100%;
+    max-width: 335px;
+    height: 335px;
+    border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(1deg, rgba(5, 5, 5, .6) 0%, rgba(5, 5, 5, 0) 100%);
+
+}
+
+.recipe__like--button {
+    padding: 0;
+    background-color: inherit;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+}
+
+.recipe__like--svg {
+    display: block;
+    pointer-events: none;
+}
+
+.like__marked--svg {
+    fill: #F8F8F8;
+    pointer-events: none;
+}
+
+path[id="Icon"] {
+    pointer-events: none;
+
+}
+
+.recipe__card--image {
+    z-index: -5;
+    min-height: 100%;
+    width: 335px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.general__information {
+    margin-top: auto;
+    padding: 16px;
+
+}
+
+.recipe__card--text {
+    margin-bottom: 16px;
+
+}
+
+.recipe__card--title {
+    margin-bottom: 8px;
+
+    color: #F8F8F8;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.28;
+    text-transform: uppercase;
+}
+
+.recipe__card--description {
+    color: #F8F8F8;
+    text-overflow: ellipsis;
+    font-style: normal;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.33;
+
+}
+
+.recipe__more--button {
+    cursor: pointer;
+    display: flex;
+    margin-left: auto;
+    padding: 8px 14px;
+
+    background: #9BB537;
+    color: #F8F8F8;
+    transition: 1s;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.recipe__more--button:hover,
+.recipe__more--button:focus {
+    color: #050505;
+}
+
+@media screen and (min-width: 768px) {
+
+    .recipe__card {
+        width: 496px;
+    }
+
+    .recipe__card--list {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 16px;
+        column-gap: 16px;
+
+    }
+
+    .recipe__card--item {
+        display: flex;
+
+        width: 100%;
+        max-width: 240px;
+        height: 264px;
+
+    }
+
+
+}
+
+@media screen and (min-width: 1280px) {
+    .recipe__card {
+        width: 782px;
+    }
+
+    .recipe__card--list {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 32px;
+        column-gap: 16px;
+    }
+
+    .recipe__card--item {
+        margin: 0 auto;
+        display: flex;
+
+
+        width: 100%;
+        max-width: 250px;
+        height: 287px;
+
+    }
+
+}
+
+/* STAR */
+
+.recipe__card--rating {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.rating__star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    height: 16px;
+
+    gap: 2px;
+}
+
+.rating__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rating__value--text {
+    display: block;
+    margin-right: 4px;
+
+    color: #F8F8F8;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28;
+
+}
+
+.recipe__star__swg {
+    fill: rgba(255, 255, 255, 0.3);
+    margin: 0;
+    padding: 0;
+
+}
+
+.rating__star[data-total-value="1"] .recipe__star__swg:nth-child(n + 5),
+.rating__star[data-total-value="2"] .recipe__star__swg:nth-child(n + 4),
+.rating__star[data-total-value="3"] .recipe__star__swg:nth-child(n + 3),
+.rating__star[data-total-value="4"] .recipe__star__swg:nth-child(n + 2),
+.rating__star[data-total-value="5"] .recipe__star__swg:nth-child(n + 1) {
+    fill: #EEA10C;
+    fill-opacity: 1;
+    transition: 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+    .recipe__star__swg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .rating__value--text {
+        margin-right: 2px;
+
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    .recipe__star__swg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
