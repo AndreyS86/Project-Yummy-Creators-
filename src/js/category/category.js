@@ -1,85 +1,49 @@
-import axios from 'axios'; // Імпортуємо бібліотеку для HTTP-запитів
-import Notiflix from 'notiflix'; // Імпортуємо бібліотеку для сповіщень
-import { createMarkup, onImagesRecipesMarkup, refs } from '../recipe/recipe'; // Імпортуємо необхідні функції
+import axios from 'axios';
+import Notiflix from 'notiflix';
 
-// Оголошуємо змінні для параметрів запиту
-let cardsPerPage = 9;
-let pageNumb = 1;
-
-// Отримуємо елементи з DOM
 const categoriesList = document.querySelector('.categories-list');
 const allCategoriesButton = document.getElementById('all-categories-button');
 
-// URL для запиту категорій
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/categories';
 
-// Асинхронна функція для отримання категорій з бекенду
 async function getCategories() {
   try {
     const response = await axios.get(BASE_URL);
-    const markUp = createMarkUp(response.data); // Створюємо розмітку для категорій
+    const markUp = createMarkUp(response.data);
     if (categoriesList) {
-      categoriesList.innerHTML = markUp; // Вставляємо розмітку в DOM
+      categoriesList.innerHTML = markUp;
 
-      addClickListenersToCategories(); // Додаємо слухачів подій для категорій
+      addClickListenersToCategories();
 
-      allCategoriesButton.classList.add('active-category'); // Додаємо клас активної категорії
+      allCategoriesButton.classList.add('active-category');
     }
   } catch (error) {
-    // Обробка помилки
-    Notiflix.Notify.failure(
-      'An error occurred while loading the data. Please try again later.'
-    );
-  }
-  onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів
-}
-
-// Асинхронна функція для отримання рецептів за категорією
-export async function getRecipesByCategory(category) {
-  const API_URL = `https://tasty-treats-backend.p.goit.global/api/recipes?category=${category}&limit=${cardsPerPage}&page=${pageNumb}`;
-
-  try {
-    const response = await axios.get(API_URL);
-    const { results } = response.data;
-    renderRecipes(results); // Викликаємо функцію для відображення рецептів
-  } catch (error) {
-    console.error(error);
-    // Обробка помилки
+    // console.error(error);
     Notiflix.Notify.failure(
       'An error occurred while loading the data. Please try again later.'
     );
   }
 }
 
-// Функція для створення розмітки рецепту
-function renderRecipes(recipes) {
-  const recipeCards = recipes.map(recipe => createMarkup([recipe])).join('');
-  refs.recipeCardList.innerHTML = recipeCards;
-}
-
-// Додаємо слухачів подій для категорій
 function addClickListenersToCategories() {
   if (categoriesList) {
     const categoryItems = categoriesList.querySelectorAll('.category-item');
     categoryItems.forEach(item => {
       item.addEventListener('click', () => {
         const category = item.dataset.category;
-        getRecipesByCategory(category); // Отримуємо рецепти за обраною категорією
 
         categoryItems.forEach(categoryItem => {
           categoryItem.classList.remove('active');
           categoryItem.classList.remove('active-category');
         });
 
-        item.classList.add('active'); // Додаємо клас активної категорії
+        item.classList.add('active');
 
         if (allCategoriesButton) {
           allCategoriesButton.classList.remove('active-category');
         }
       });
     });
-
-    // Додаємо слухача події для кнопки "All Categories"
     if (allCategoriesButton) {
       allCategoriesButton.addEventListener('click', () => {
         categoryItems.forEach(categoryItem => {
@@ -87,28 +51,11 @@ function addClickListenersToCategories() {
           categoryItem.classList.remove('active-category');
         });
         allCategoriesButton.classList.add('active-category');
-        showAllCategories();
-        onImagesRecipesMarkup();
-        // getCategories();
       });
-
-      onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів з зображеннями
     }
   }
 }
 
-// Функція для видалення розмітки всіх рецептів
-function removeAllRecipes() {
-  refs.recipeCardList.innerHTML = ''; // Очищуємо контейнер з рецептами
-}
-
-function showAllCategories() {
-  resetAllCategoriesButton(); // Знімаємо активний клас з кнопки "All Categories"
-  removeAllRecipes(); // Видаляємо розмітку рецептів
-  getCategories(); // Отримуємо всі категорії заново
-}
-
-// Функція для створення розмітки категорій
 function createMarkUp(data) {
   return data
     .map(
@@ -119,14 +66,12 @@ function createMarkUp(data) {
     .join('');
 }
 
-// Функція для скидання стану кнопки "All Categories"
 function resetAllCategoriesButton() {
   if (allCategoriesButton) {
     allCategoriesButton.classList.remove('active-category');
   }
 }
 
-// Додаємо слухачів подій для інших фільтрів
 const otherFilters = document.querySelectorAll(
   '.category-item:not(#all-categories-button)'
 );
@@ -138,8 +83,6 @@ otherFilters.forEach(filter => {
       categoryItem.classList.remove('active');
     });
     filter.classList.add('active');
-    const category = filter.dataset.category;
-    getRecipesByCategory(category); // Отримуємо рецепти за обраною категорією
   });
 
   filter.addEventListener('click', () => {
@@ -147,7 +90,6 @@ otherFilters.forEach(filter => {
   });
 });
 
-// Додаємо слухачів подій для кнопки "All Categories"
 if (allCategoriesButton) {
   allCategoriesButton.addEventListener('click', () => {
     allCategoriesButton.classList.add('active-category');
@@ -160,5 +102,4 @@ if (allCategoriesButton) {
   });
 }
 
-// Викликаємо функцію для отримання категорій при завантаженні сторінки
 getCategories();

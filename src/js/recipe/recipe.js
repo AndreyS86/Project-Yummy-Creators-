@@ -4,7 +4,7 @@ import { OpenModal } from '../modal/modal-recipes-rating.js';
 // import localStorageGet from '../favorites-recipe/local-storage-favorites';
 
 
-export const refs = {
+const refs = {
   recipeCardList: document.querySelector('.recipe__card--list'),
   recipeBlock: document.querySelector('.recipe__card'),
 };
@@ -19,7 +19,7 @@ let currentPage = 1;
 let totalPageLocc = 0;
 let limit = 8;
 
-export function onImagesRecipesMarkup() {
+function onImagesRecipesMarkup() {
   getImagesRecipes(currentPage, requalityImage()).then(data => {
     if (data.results.length !== 0) {
       createMarkup(data.results);
@@ -30,7 +30,7 @@ export function onImagesRecipesMarkup() {
   });
 }
 
-export function createMarkup(items) {
+function createMarkup(items) {
   const markup = items
     .map(
       ({
@@ -158,7 +158,6 @@ export function createMarkup(items) {
     .join('');
   refs.recipeCardList.insertAdjacentHTML('beforeend', markup);
   reloadFavoriteRecipes();
-  return markup;
 }
 
 function addFavoriteRecipes(e) {
