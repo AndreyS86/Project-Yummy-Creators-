@@ -34,25 +34,26 @@ function createMarkupSwiper(arrSliders) {
       .map(
         ({ cook, topic }) =>
           `<div class="swiper-slide all-card" id="twist" style="width: 515px;">
-                <div class="slider-images card" style="display: flex;margin-right: 10px;">
+                <div class="slider-images card">
 
                     <div class="image-container-1 first-collection-card">
 										<img class="image-1 first-card" src="${cook.imgUrl}" alt="${cook.name}">
 										</div>
-
+                </div>
+								<div class="slider-images card">
                     <div class="image-container-2 second-collection-card" >
                         <img class="image-2 second-card"src="${topic.previewUrl}" alt="${cook.name}">
-                        <h2 class="image-title title-card">${topic.name}</h2>
-
+                        <p class="image-title title-card">${topic.name}</p>
                       <p class="image-description description-card">${topic.area}</p>
                     </div>
-
+								</div>
+                <div class="slider-images card">
                     <div class="image-container-3 third-collection-card">
 										<img class="image-3 third-card" src="${topic.imgUrl}" alt="${cook.name}">
 										</div>
-
                 </div>
-            </div>`
+                
+          </div>`
       )
 
       .join('')
@@ -70,9 +71,9 @@ const swiper = new Swiper('.swiper', {
     clickable: true,
     dynamicBullets: true,
   },
-  // autoplay: {
-  //   delay: 1500,
-  // },
+  autoplay: {
+    delay: 1500,
+  },
 
   navigation: {
     nextEl: '.swiper-button-next',
