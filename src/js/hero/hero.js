@@ -1,7 +1,7 @@
 export const hero = {};
 import axios from 'axios';
 import Swiper from 'swiper/swiper-bundle.min.mjs';
-// import '../../node_modules/swiper/swiper-bundle.css';
+import '../../../node_modules/swiper/swiper-bundle.css';
 
 const BASE_URL = `https://tasty-treats-backend.p.goit.global/api/events`;
 
