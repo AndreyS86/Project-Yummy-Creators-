@@ -387,7 +387,7 @@
     padding-top: 30px;
   }
 
-  .swiper-pagination-bullet {
+  /* .swiper-pagination-bullet {
     width: 24px;
     height: auto;
     color: #050505;
@@ -410,7 +410,7 @@
     font-weight: 600;
     line-height: 18px;
     letter-spacing: 2px;
-  }
+  } */
 }
 
 /* desctop */
@@ -425,7 +425,7 @@
     min-width: 0;
     display: flex;
     justify-content: space-between;
-    gap: 32px;
+    gap: 30px;
   }
 
   .container.hero-container {
@@ -598,6 +598,12 @@
     padding-left: 95px;
     padding-top: 30px;
   }
+
+  .swiper-pagination .btn-hero {
+    width: 80px;
+    position: relative;
+    padding-top: 20px;
+  }
 }
 
 /* dark-theme */
@@ -622,7 +628,7 @@
 }
 
 /* swiper */
-
+/* 
 @media screen and (min-width: 768px) {
   .swiper-container {
     max-width: 768px;
