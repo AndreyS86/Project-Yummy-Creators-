@@ -6,7 +6,6 @@ import { createMarkup, onImagesRecipesMarkup, refs } from '../recipe/recipe'; //
 let cardsPerPage = 9;
 let pageNumb = 1;
 
-
 // Отримуємо елементи з DOM
 const categoriesList = document.querySelector('.categories-list');
 const allCategoriesButton = document.getElementById('all-categories-button');
@@ -21,7 +20,7 @@ async function getCategories() {
     const markUp = createMarkUp(response.data); // Створюємо розмітку для категорій
     if (categoriesList) {
       categoriesList.innerHTML = markUp; // Вставляємо розмітку в DOM
-
+// onImagesRecipesMarkup()
       addClickListenersToCategories(); // Додаємо слухачів подій для категорій
 
       allCategoriesButton.classList.add('active-category'); // Додаємо клас активної категорії
@@ -32,7 +31,7 @@ async function getCategories() {
       'An error occurred while loading the data. Please try again later.'
     );
   }
-  onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів
+  // onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів
 }
 
 // Асинхронна функція для отримання рецептів за категорією
@@ -93,7 +92,7 @@ function addClickListenersToCategories() {
         // getCategories();
       });
 
-      onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів з зображеннями
+      // onImagesRecipesMarkup(); // Викликаємо функцію для додавання розмітки рецептів з зображеннями
     }
   }
 }
