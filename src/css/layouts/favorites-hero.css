@@ -4,13 +4,15 @@
 .category-buttons {
   display: flex;
   padding-top: 40px;
-  padding-bottom: 24px;
+  padding-bottom: 12px;
   gap: 12px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
+.fav-hero {
+  background: no-repeat;
+}
 .category-buttons::-webkit-scrollbar {
   display: none;
 }
@@ -26,7 +28,7 @@
   color: rgba(5, 5, 5, 0.3);
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.29;
+  line-height: 18px;
   font-family: Inter;
   font-style: normal;
   white-space: nowrap;
@@ -50,8 +52,9 @@
     max-width: 335px;
     height: 516px;
     border-radius: 15px;
-    margin: 20px auto 0;
+    margin: 0 auto 0;
     background-size: cover;
+
     background-image: -webkit-image-set(
       url('../../images/fav-mobile/hero-mob@1x.webp') 1x,
       url('../../images/fav-mobile/hero-mob@2x.webp') 2x,
@@ -73,9 +76,6 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .fav-wrapper {
-    padding-top: 12px;
-  }
   .fav-hero {
     border-radius: 15px;
     width: 100%;
@@ -106,7 +106,7 @@
   }
   .category-buttons {
     padding-top: 64px;
-    padding-bottom: 32px;
+    padding-bottom: 16px;
     gap: 15px;
   }
 }
@@ -136,4 +136,8 @@
       url('../../images/fav-desc/hero-desc@3x.jpg') 3x
     );
   }
+}
+.dark-theme .fav-button {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.3);
 }
