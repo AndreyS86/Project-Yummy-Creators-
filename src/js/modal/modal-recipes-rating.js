@@ -21,7 +21,7 @@ const refs = {
   sendRateBtn: document.querySelector('.send-rating-btn'),
 };
 
-//OpenModal(currentBtn): Эта функция вызывается при открытии модального окна для конкретного рецепта. Внутри функции добавляются обработчики событий на кнопки и другие элементы модального окна. Также функция обновляет информацию о рецепте, проверяет, добавлен ли рецепт в избранное, и управляет стилями элементов.
+//OpenModal: Эта функция вызывается при открытии модального окна. Внутри функции добавляются обработчики событий на кнопки и другие элементы модального окна. Также функция обновляет информацию о рецепте, проверяет, добавлен ли рецепт в избранное, и управляет стилями элементов.
 export function OpenModal(id) {
   refs.closeModalBtn.addEventListener('click', CloseModal);
   refs.backdropModal.addEventListener('click', CloseOnClick);
@@ -39,7 +39,7 @@ export function OpenModal(id) {
   const data = JSON.parse(storage); //преобразовываем содержимое хранилища из JSON-строки (?) в JavaScript объект.
 
   if (storage) {
-    if (data.find(el => el.id === currentBtn.dataset.id)) {
+    if (data.find(el => el.id === id)) {
       refs.saveRecipeBtn.textContent = 'Remove favorite';
     } else {
       refs.saveRecipeBtn.textContent = 'Add to favorite';
@@ -70,7 +70,7 @@ async function SubmitRate(e) {
   CloseModal();
 }
 
-//OpenRateModal(): Эта функция вызывается при открытии модалrb для оценки рецепта. Она добавляет обработчики событий для кнопок и формы оценки.
+//OpenRateModal(): Эта функция вызывается при открытии модалки для оценки рецепта. Она добавляет обработчики событий для кнопок и формы оценки.
 function OpenRateModal() {
   refs.mainModalRecipes.classList.add('is-hidden-modal');
   refs.rateModal.classList.remove('is-hidden-modal');
