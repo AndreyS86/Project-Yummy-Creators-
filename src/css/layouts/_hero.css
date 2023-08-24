@@ -20,7 +20,7 @@
   font-weight: 600;
   line-height: 120%;
   text-transform: uppercase;
-  /* margin-bottom: 14px; */
+  margin-bottom: 14px;
 }
 
 .hero-link {
@@ -271,7 +271,7 @@
     margin-left: auto;
     max-width: 768px;
     margin-top: 64px;
-    padding-left: 32px;
+    padding-left: 0;
   }
 
   .hero-card {
@@ -417,8 +417,8 @@
 
 @media screen and (min-width: 1280px) {
   .hero-list {
-    padding-top: 64px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .hero-list {
@@ -436,6 +436,7 @@
     padding-left: 0;
     padding-right: 0;
     max-width: 1280px;
+    margin-top: 104px;
   }
 
   .hero-title {
@@ -450,7 +451,7 @@
 
   .hero-link {
     color: #9bb537;
-    font-size: 26px;
+    font-size: 36px;
     font-style: italic;
     font-weight: 400;
     line-height: 1.2;
