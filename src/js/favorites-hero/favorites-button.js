@@ -3,6 +3,8 @@ import { markupCardFavorites } from '../favorites-recipe/markup-card-favorites.j
 import { dishListEl } from '../favorites-recipe/markup-card-favorites.js';
 import { updatePageShowEvent } from '../favorites-recipe/markup-card-favorites.js';
 
+const wrapperEl = document.querySelector('.fav-wrapper');
+const categoryContainer = document.getElementById('category-buttons');
 // Виклик функції для завантаження даних з localStorage та відображення кнопок категорій
 getDataFromLocalStorage();
 
@@ -20,24 +22,33 @@ function getCategoriesFromData(data) {
 // Функція для отримання та відображення даних з localStorage
 export function getDataFromLocalStorage() {
   const storageData = localStorage.getItem('dishLocalKey');
+  const isSmallScreen = window.matchMedia('(max-width: 767px)').matches;
 
   if (storageData) {
     const parsedData = JSON.parse(storageData);
     const uniqueCategories = getCategoriesFromData(parsedData);
 
-    removeButtons(); // Видаляємо попередні кнопки
-    if (uniqueCategories.length > 0) {
-      createButtonMarkup(uniqueCategories); // Створюємо нові кнопки
+    if (uniqueCategories.length === 0 && isSmallScreen) {
+      wrapperEl.classList.add('visually-hidden');
+      removeButtons(); // Видаляємо попередні кнопки
+    } else {
+      wrapperEl.classList.remove('visually-hidden');
+      removeButtons(); // Видаляємо попередні кнопки
+      if (uniqueCategories.length > 0) {
+        createButtonMarkup(uniqueCategories); // Створюємо нові кнопки
+      }
     }
   } else {
     console.log('No data found in localStorage.');
-    // Можна відобразити меню, яке було знизу
+
+    if (isSmallScreen) {
+      // Можна відобразити меню, яке було знизу або виконати інші дії на малих екранах
+    }
   }
 }
 
 // Функція для створення розмітки кнопок категорій
 function createButtonMarkup(categories) {
-  const categoryContainer = document.getElementById('category-buttons');
   categoryContainer.classList.add('category-buttons');
   const buttonAll = document.createElement('button');
   buttonAll.textContent = 'All categories';
@@ -51,6 +62,7 @@ function createButtonMarkup(categories) {
     button.id = `category-${category}`; // Встановлюємо унікальний id для кнопки
     button.classList.add('fav-button');
     button.addEventListener('click', () => handleCategoryClick(category));
+    button.setAttribute('aria-label', `Show ${category} category`);
     categoryContainer.appendChild(button);
   });
 }
@@ -94,4 +106,5 @@ function updateRecipeList(recipes) {
 }
 
 // Рендерінг сторінки після перезавантаження //
+
 updatePageShowEvent();
