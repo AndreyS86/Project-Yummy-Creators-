@@ -6,6 +6,7 @@ import { createMarkup, onImagesRecipesMarkup, refs } from '../recipe/recipe'; //
 let cardsPerPage = 9;
 let pageNumb = 1;
 
+
 // Отримуємо елементи з DOM
 const categoriesList = document.querySelector('.categories-list');
 const allCategoriesButton = document.getElementById('all-categories-button');
