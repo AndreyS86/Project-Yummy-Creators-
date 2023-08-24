@@ -22,11 +22,11 @@
   p {
     margin: 0;
   }
-  .categories-list {
+  /* .categories-list {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+  } */
   
   .categories-container {
     max-width: 375px;
@@ -38,12 +38,13 @@
   
   
   .filter-all-categories {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
+    padding-top: 30px;
   }
   
-  .filter-all-categories {
+  /* .filter-all-categories {
     margin-bottom: 40px;
-  }
+  } */
   
   .filter-all-categories-button {
     width: 176px;
@@ -139,25 +140,25 @@
   }
   
   @media screen and (min-width: 768px) {
-    .categories-container {
+    /* .categories-container {
       max-width: 768px;
       /* padding-left: 32px;
       padding-right: 32px; */
-    }
+    /* }  */
     .filter-all-categories {
-      width: 174px;
+      width: 176px;
       box-sizing: border-box;
-      margin-top: 24px;
-      margin-bottom: 64px;
+      padding-top: 24px;
+      padding-bottom: 64px;
     }
     .filter-all-categories-button {
       margin-bottom: 30px;
-      width: 174px;
+      width: 176px;
       box-sizing: border-box;
     }
   
     .filter-categories-block {
-      min-width: 174px;
+      min-width: 176px;
       height: 416px;
       overflow: overlay;
     }
@@ -183,10 +184,19 @@
     .all-categories-button {
       width: 174px;
     }
+
+    .filter-all-categories-button {
+      margin-bottom: 42px;
+    }
     .filter-categories-block {
       min-width: 235px;
       height: 416px;
       overflow: overlay;
     }
+    .filter-all-categories {
+      width: 235px;
+      box-sizing: border-box;
+      padding-top: 24px;
+      padding-bottom: 64px;
   }
-  
+}

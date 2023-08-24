@@ -73,6 +73,6 @@
     padding-left: 100;
     padding-right: 99;
     display: flex;
-    gap: initial;
+    gap: 64px;
   }
 }
