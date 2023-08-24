@@ -9,6 +9,7 @@ import './js/header/darkTheme.js';
 import './js/hero/hero.js';
 import './js/modal/API-modal.js';
 import './js/modal/modal-recipes-rating.js';
+import './js/modal-order/modal-order.js';
 import './js/modal/ranging-modal.js';
 import './js/scroll/up-scroll.js';
 // import './js/footer/footer.js';
