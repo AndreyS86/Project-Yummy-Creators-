@@ -1,0 +1,18 @@
+<div class="backdrop-order is-hidden" data-modal="">
+    <div class="order-modal"> <span class="order-close"> <svg width="24" height="24">
+                <use class="order-modal-close-icon" href="./svg/symbol-defs.svg#icon-close-btn"></use>
+            </svg> </span>
+        <h3 class="order-modal-title">Order now</h3>
+        <form class="order-form" id="order-form"> <label for="name" class="order-form-label">Name</label> <input
+                type="text" id="name" name="name" placeholder="Enter your name"
+                class="input-js name-form-valid order-form-input" required pattern="^[A-Za-zА-Яа-яЁёІіЇїЄє\s]+$"> <label
+                for="phone" class="order-form-label">Phone number</label> <input type="tel" id="phone"
+                class="input-js order-form-input phone-form-valid" name="phone" pattern="^\+\d+$" required
+                placeholder="Enter your phone"> <label for="email" class="order-form-label">Email</label> <input
+                type="email" id="email" name="email" placeholder="Enter your email"
+                class="email-form-valid input-js order-form-input" required> <label for="comment"
+                class="order-form-label">Comment</label> <textarea id="comment" name="comment"
+                class="order-form-comment"></textarea> <button type="submit" class="submit-btn" disabled>Send</button>
+        </form>
+    </div>
+</div>
