@@ -13,6 +13,7 @@
 @import './search/search.css';
 @import './components/modal.css';
 @import './layouts/up-scroll.css';
+@import './components/modal-order.css';
 @import './common.css';
 
 @font-face {
