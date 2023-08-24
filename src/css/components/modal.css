@@ -565,30 +565,76 @@ button.give-rating-btn {
 
 /* Dark Theme */
 
-.dark .modal-recipes {
+.dark-theme .modal-recipes,
+.dark-theme .modal-rating {
     background-color: #050505;
 }
 
-.dark .recipe-ingredient {
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.dark .recipe-ps {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.dark .recipe-tag {
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.dark .close-modal .close-modal-ico {
-    stroke: #fff;
-}
-
-.dark .modal-recipes .rate {
+.dark-theme .recipe-title-txt,
+.dark-theme .rate-modal-title,
+.dark-theme .recipe-instr,
+.dark-theme .modal-recipes .rate,
+.dark-theme .rate-range-value {
     color: #fff;
 }
 
-.dark .recipe-time {
+.dark-theme .recipe-ingredient {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.dark-theme .recipe-ps {
     color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-theme .recipe-tag {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.dark-theme .close-modal .close-modal-ico {
+    stroke: #fff;
+}
+
+
+.dark-theme .recipe-time {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/*bugs-fix*/
+.rate-list {
+    display: flex;
+    margin-right: auto;
+}
+
+.star-icon {
+    fill: currentColor;
+}
+
+@media screen and (min-width: 768px) {
+    .star-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .star-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.rate-item-active {
+    color: #eea10c;
+}
+
+.rate-item {
+    color: rgba(248, 248, 248, 0.1);
+}
+
+.modal-star-icon {
+    fill: currentColor;
+    stroke: currentColor;
 }
