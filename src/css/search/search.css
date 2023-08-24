@@ -33,17 +33,17 @@
   .search-form-input {
     width: 335px;
   }
+  .select-form {
+    height: 46px;
+  }
   .select-time {
     width: 160px;
-    height: 46px;
   }
   .select-area {
     width: 161px;
-    height: 46px;
   }
   .select-ingredients {
     width: 188px;
-    height: 46px;
   }
   .search-form-input {
     display: flex;
@@ -70,6 +70,7 @@
     display: none;
   }
   .saarch-form-btn-close::after {
+    content: "";
   }
   .form-icon-search {
     text-align: center;
@@ -147,3 +148,38 @@
     justify-content: center;
   }
 
+  @media screen and (min-width: 375px) {
+    .container {
+        width: 375px;
+    } 
+  }
+  @media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    } 
+    .search-form-input {
+        width: 246px;
+        height: 50px;
+    }
+    .select-form {
+       height: 50px;
+    }
+    .select-time {
+       width: 127px;
+    }
+    .select-area {
+       width: 143px;
+    }
+    .select-ingredients {
+      width: 190px;
+   }
+  }
+  @media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+        padding-left: 100px;
+        padding-right: 99px;
+    } 
+  }

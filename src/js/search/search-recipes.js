@@ -1,7 +1,8 @@
 import Notiflix from 'notiflix';
 const axios = require('axios').default;
+// import {createMarkup} from "./recipe/recipe.js";
 
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".recipe__card--list");
 const galleryOops = document.querySelector('.gallery-oops');
 const inputForm = document.querySelector('.style-form');
 const formTime = document.querySelector('.select-time');
@@ -33,6 +34,7 @@ export function getRecipes() {
         recipes = response.data.results;
 
         if (recipes.length > 0) {
+            // createMarkup(recipes);
             gallery.innerHTML = showBreedImage(recipes);
             galleryOops.style.display = 'none';
         } else {
@@ -45,9 +47,8 @@ export function getRecipes() {
         Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
     });
 }
-
 function showBreedImage(img_recipes) { 
-
+    console.log(img_recipes)
     return img_recipes.map((number) => 
         `<li class='js-recipes'>
             <img src="${number.thumb}" alt="${number.title}" width="335px">
