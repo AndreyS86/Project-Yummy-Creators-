@@ -52,11 +52,16 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    transform: scale(1.8) rotate(180deg);
-    transform-origin: center;
-  }
+}
+
+.order-close:hover {
+  transform: scale(1.8) rotate(180deg);
+  transform-origin: center;
+}
+
+.order-close:focus {
+  transform: scale(1.8) rotate(180deg);
+  transform-origin: center;
 }
 
 .order-modal-close-icon {
@@ -95,10 +100,16 @@
   border-radius: 15px;
   outline: none;
   border: 1px solid rgba(5, 5, 5, 0.5);
-  &:hover,
-  &:active {
-    border: 1px solid #9bb537;
-  }
+}
+
+.order-form-input:hover {
+  border: 1px solid #9bb537;
+}
+.order-form-input:focus {
+  border: 1px solid #9bb537;
+}
+.order-form-input:active {
+  border: 1px solid #9bb537;
 }
 
 .order-form-comment {
@@ -110,10 +121,18 @@
   outline: none;
   border: 1px solid rgba(5, 5, 5, 0.5);
   resize: none;
-  &:hover,
-  &:active {
-    border: 1px solid #9bb537;
-  }
+}
+
+.order-form-comment:hover {
+  border: 1px solid #9bb537;
+}
+
+.order-form-comment:focus {
+  border: 1px solid #9bb537;
+}
+
+.order-form-comment:active {
+  border: 1px solid #9bb537;
 }
 
 .submit-btn {
@@ -124,12 +143,14 @@
   justify-content: center;
   align-items: center;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    color: #050505;
-  }
-  &:focus {
-    color: #050505;
-  }
+}
+
+.submit-btn:hover {
+  color: #050505;
+}
+
+.submit-btn:focus {
+  color: #050505;
 }
 
 .name-form-valid:not(:placeholder-shown):required:valid {
