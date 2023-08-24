@@ -1,7 +1,7 @@
 import { localStorageGet } from './local-storage-favorites.js';
 import { oopsDivEl } from './oops-favorites.js';
 import { getDataFromLocalStorage } from '../favorites-hero/favorites-button.js';
-import { OpenModal } from '../modal/modal-recipes-rating.js'
+import { OpenModal } from '../modal/modal-recipes-rating.js';
 
 export const dishListEl = document.querySelector('.favorites-cards');
 
@@ -23,7 +23,7 @@ export function markupCardFavorites(dishArr) {
                                   <p class="fav-card-desc">${description}</p>
                                   <div class="fav-card-info-wrap">
                                       <div class="fav-rating-wrap">
-                                          <span class="fav-card-rating">${rating}</span>
+                                          <span class="fav-card-rating">${rating.toFixed(1)}</span>
                                           <div class="fav-stars-wrap">
                                             <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                                             ${patchStar}
@@ -89,6 +89,16 @@ function onHeartClick(e) {
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
+    //========== Оновлюємо масив ID Юрія в localStorage ==========//
+    const arrLocUr = [...JSON.parse(localStorage.getItem('favoriteRecipesId'))];
+    const arr = [];
+    for (const item of arrLocUr) {
+      if (itemId !== item) {
+        arr.push(item);
+      }
+    }
+    localStorage.setItem('favoriteRecipesId', JSON.stringify(arr));
+    //==============================================================//
     arrLocal.map((obj, idx) => {
       if (itemId === obj._id) {
         arrLocal.splice(idx, 1);
@@ -107,7 +117,7 @@ function onHeartClick(e) {
 
 function onSeeRecipeClick(e) {
   const liElement = e.currentTarget.closest('.fav-card');
-  const itemId = liElement.getAttribute('id'); 
+  const itemId = liElement.getAttribute('id');
   OpenModal(itemId);
 }
 
