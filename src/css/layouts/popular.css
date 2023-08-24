@@ -64,7 +64,7 @@ li {
 }
 @media screen and (min-width: 768px) {
     .popular-container {
-        width: 120;
+        width: 176px;
     }
     .popular-name {
         margin-bottom: 32px;
@@ -79,15 +79,24 @@ li {
     .popular-text-conteiner{
         width: 120px;
     }
+        .popular-link {
+            gap: 8px;
+}
 }
 
 @media screen and (min-width: 1280px) {
     .popular-container {
-            width: 316px;
+            width: 235px;
         }
         .img-popular {
             width: 64px;
             height: 64px;
         }
-              
+           .popular-text-conteiner {
+               width: 155px;
+           }
+                   .popular-link {
+                       gap: 16px;
+                   }
+         
 }
