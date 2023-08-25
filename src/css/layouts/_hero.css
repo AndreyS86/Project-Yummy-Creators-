@@ -66,49 +66,13 @@
 .swiper-container.hero {
   margin-right: auto;
   margin-left: auto;
-  width: 375px;
+  max-width: 375px;
   margin-top: 48px;
 }
 
 .hero-card {
   min-width: 320px;
   height: auto;
-}
-
-.swiper.hero-card {
-  padding-bottom: 22px;
-}
-
-.swiper-pagination .btn-hero-active {
-  width: 80px;
-  position: relative;
-  bottom: -4px;
-  color: #9bb537;
-}
-
-.swiper-pagination-bullet .btn-hero {
-  width: 24px;
-  height: auto;
-  color: #050505;
-  font-family: Poppins;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 18px;
-  letter-spacing: 2px;
-}
-
-.swiper-pagination-bullet-active .btn-hero {
-  width: 24px;
-  height: auto;
-  color: #9bb537;
-  text-align: center;
-  font-family: Poppins;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 18px;
-  letter-spacing: 2px;
 }
 
 .twist .swiper-wrapper {
@@ -168,7 +132,6 @@
   background-position: center;
   background-size: contain;
   margin-right: 8px;
-  padding: 56px 22px 82px 21px;
 }
 
 .image-2.second-card {
@@ -213,6 +176,31 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 24px;
+  height: auto;
+  color: #050505;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 2px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 24px;
+  height: auto;
+  color: #9bb537;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 2px;
 }
 
 /* tablet */
@@ -281,7 +269,7 @@
   .swiper-container.hero {
     margin-right: auto;
     margin-left: auto;
-    width: 768px;
+    max-width: 768px;
     margin-top: 64px;
     padding-left: 0;
   }
@@ -341,7 +329,8 @@
   .image-container-2.second-collection-card {
     min-width: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 351px;
     height: 442px;
     border-radius: 15px;
@@ -349,7 +338,6 @@
     background: #050505;
     background-position: center;
     background-size: contain;
-    padding: 67px 24px 104px 23px;
   }
 
   .image-2.second-card {
@@ -398,6 +386,31 @@
     padding-left: 95px;
     padding-top: 30px;
   }
+
+  .swiper-pagination-bullet {
+    width: 24px;
+    height: auto;
+    color: #050505;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 24px;
+    height: auto;
+    color: #9bb537;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
 }
 
 /* desctop */
@@ -412,7 +425,7 @@
     min-width: 0;
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 32px;
   }
 
   .container.hero-container {
@@ -470,7 +483,7 @@
 
   .swiper-container.hero {
     padding-left: 0;
-    width: 734px;
+    max-width: 734px;
     margin-top: 64px;
     margin-right: auto;
     margin-left: auto;
@@ -479,7 +492,6 @@
   .hero-card {
     min-width: 320px;
     height: auto;
-    padding-bottom: 20px;
   }
 
   .twist .swiper-wrapper {
@@ -529,14 +541,15 @@
   .image-container-2.second-collection-card {
     min-width: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 351px;
     height: 442px;
     border-radius: 15px;
     border: 1px solid rgba(155, 181, 55, 0.3);
     background: #050505;
+    background-position: center;
     background-size: contain;
-    padding: 67px 20px 104px 23px;
   }
 
   .image-2.second-card {
@@ -585,13 +598,6 @@
     padding-left: 95px;
     padding-top: 30px;
   }
-
-  /* .swiper-pagination .btn-hero {
-    width: 80px;
-    position: relative;
-		bottom: -4px;
-    
-  } */
 }
 
 /* dark-theme */
@@ -616,7 +622,7 @@
 }
 
 /* swiper */
-/* 
+
 @media screen and (min-width: 768px) {
   .swiper-container {
     max-width: 768px;
