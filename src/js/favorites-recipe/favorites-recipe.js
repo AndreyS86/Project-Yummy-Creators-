@@ -6,3 +6,4 @@ import '../header/darkTheme.js';
 import '../header/mobMenu.js';
 import '../scroll/up-scroll.js';
 import '../favorites-hero/favorites-button.js';
+import '../modal-order/modal-order.js';
