@@ -56,14 +56,14 @@ function renderRecipes(recipes) {
   const recipeCards = recipes.map(recipe => createMarkup([recipe])).join('');
   refs.recipeCardList.innerHTML = recipeCards;
 }
-export const category = '';
+export let category = '';
 // Додаємо слухачів подій для категорій
 function addClickListenersToCategories() {
   if (categoriesList) {
     const categoryItems = categoriesList.querySelectorAll('.category-item');
     categoryItems.forEach(item => {
       item.addEventListener('click', () => {
-         category = item.dataset.category;
+        category = item.dataset.category;
         getRecipesByCategory(category); // Отримуємо рецепти за обраною категорією
 
         categoryItems.forEach(categoryItem => {
