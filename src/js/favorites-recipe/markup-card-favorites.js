@@ -89,6 +89,16 @@ function onHeartClick(e) {
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
+    //========== Оновлюємо масив ID Юрія в localStorage ==========//
+    const arrLocUr = [...JSON.parse(localStorage.getItem('favoriteRecipesId'))];
+    const newArrLocUr = [];
+    for (const item of arrLocUr) {
+      if (itemId !== item) {
+        arr.push(item);
+      }
+    }
+    localStorage.setItem('favoriteRecipesId', JSON.stringify(newArrLocUr));
+    //==============================================================//
     arrLocal.map((obj, idx) => {
       if (itemId === obj._id) {
         arrLocal.splice(idx, 1);
