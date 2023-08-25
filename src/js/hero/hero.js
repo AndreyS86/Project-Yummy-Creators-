@@ -1,5 +1,9 @@
 export const hero = {};
 import axios from 'axios';
+
+// import { Navigation, Pagination } from 'swiper';
+// Swiper.use([Navigation, Pagination]);
+
 import Swiper from 'swiper/swiper-bundle.min.mjs';
 import '../../../node_modules/swiper/swiper-bundle.css';
 
