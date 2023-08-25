@@ -2,6 +2,10 @@ const modalOrder = () => {
   const openModalButtons = document.querySelectorAll('.order-open-btn');
   const closeModalButton = document.querySelector('.order-close');
   const modalContainer = document.querySelector('.backdrop-order');
+  const nameInput = document.querySelector('#name');
+  const phoneInput = document.querySelector('#phone');
+  const emailInput = document.querySelector('#email');
+  const submitButton = document.querySelector('.submit-btn');
 
   openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -28,6 +32,18 @@ const modalOrder = () => {
       document.body.style.overflow = '';
     }
   });
+
+  nameInput.addEventListener('input', validateForm);
+  phoneInput.addEventListener('input', validateForm);
+  emailInput.addEventListener('input', validateForm);
+
+  function validateForm() {
+    if (nameInput.value.trim() !== '' && phoneInput.value.trim() !== '' && emailInput.checkValidity()) {
+      submitButton.removeAttribute('disabled');
+    } else {
+      submitButton.setAttribute('disabled', 'disabled');
+    }
+  }
 };
 
 modalOrder();
