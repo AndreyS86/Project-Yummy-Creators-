@@ -94,7 +94,7 @@ function onHeartClick(e) {
     const newArrLocUr = [];
     for (const item of arrLocUr) {
       if (itemId !== item) {
-        arr.push(item);
+        newArrLocUr.push(item);
       }
     }
     localStorage.setItem('favoriteRecipesId', JSON.stringify(newArrLocUr));
