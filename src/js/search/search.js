@@ -31,8 +31,15 @@ getIngredients();
 
  inputForm.addEventListener('input', debounceHandler);
 
+ inputForm.addEventListener('keydown', function(e) {
+  if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+    e.preventDefault();
+  }
+});
+
  function inputSaarch(evt) {
     evt.preventDefault();
+
     formIconSearch.style.stroke = '#9BB537';
     if (inputForm.value.length > 1) {
         inputFormClose.style.display = 'block';
