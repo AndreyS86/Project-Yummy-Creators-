@@ -49,9 +49,11 @@ getIngredients();
 
  formInputReset.addEventListener('click', form_input);
 
- function form_input() {
+ function form_input(evt) {
+    evt.preventDefault(); 
     inputForm.value = '';
     inputFormClose.style.display = 'none';
+    galleryOops.style.display = 'none';
     form_searh();
  }
 
