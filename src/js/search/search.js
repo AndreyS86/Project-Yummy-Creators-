@@ -86,7 +86,6 @@ export function updateOutput() {
         time: formTime.value,
       }
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formElements));
-
     getRecipes();
  }
 
