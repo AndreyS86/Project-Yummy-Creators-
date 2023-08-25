@@ -13,6 +13,7 @@ const formArea = document.querySelector('.select-area');
 const formIngredients = document.querySelector('.select-ingredients');
 const formInputReset = document.querySelector('.form-icon-close');
 const formReset = document.querySelector('.form-icon-x');
+const galleryOops = document.querySelector('.gallery-oops');
 
 
 for (let i = 5; i <= 160; i+=5) {
@@ -37,6 +38,7 @@ getIngredients();
         inputFormClose.style.display = 'block';
     } else {
         inputFormClose.style.display = 'none';
+        galleryOops.style.display = 'none';
     }
     form_searh();
  }
@@ -90,5 +92,6 @@ export function updateOutput() {
  function form_Reset() {
     form.reset();
     inputFormClose.style.display = 'none';
+    galleryOops.style.display = 'none';
     form_searh();
  }
