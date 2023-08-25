@@ -192,9 +192,10 @@ function reloadFavoriteRecipes(params) {
     JSON.parse(localStorage.getItem('favoriteRecipesId')) || [];
 
   const remouteObjFavoriteId = JSON.parse(localStorage.getItem('dishLocalKey'));
-  const remouteArrFavoriteId = remouteObjFavoriteId.map(itemId => {
-    return itemId._id;
-  });
+  // const remouteArrFavoriteId = remouteObjFavoriteId ? remouteObjFavoriteId.map(itemId => itemId._id) : [];
+  const remouteArrFavoriteId = remouteObjFavoriteId
+    ? remouteObjFavoriteId.map(itemId => itemId._id)
+    : [];
 
   const generalFavoriteId = [...storedFavorites, ...remouteArrFavoriteId];
 
