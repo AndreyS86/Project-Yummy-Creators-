@@ -1,23 +1,22 @@
 import Notiflix from 'notiflix';
 import { getImagesRecipes } from './recipe-api';
 import { OpenModal } from '../modal/modal-recipes-rating.js';
+import '../header/darkTheme.js';
 // import localStorageGet from '../favorites-recipe/local-storage-favorites';
-
 
 export const refs = {
   recipeCardList: document.querySelector('.recipe__card--list'),
   recipeBlock: document.querySelector('.recipe__card'),
 };
 
-refs.recipeCardList.addEventListener('click', onOpenModal);
-refs.recipeCardList.addEventListener('click', addFavoriteRecipes);
-document.addEventListener('DOMContentLoaded', function () {
-  onImagesRecipesMarkup();
-});
-
 let currentPage = 1;
 let totalPageLocc = 0;
 let limit = 8;
+
+refs.recipeCardList.addEventListener('click', onOpenModal);
+refs.recipeCardList.addEventListener('click', addFavoriteRecipes);
+
+onImagesRecipesMarkup();
 
 export function onImagesRecipesMarkup() {
   getImagesRecipes(currentPage, requalityImage()).then(data => {
@@ -156,7 +155,7 @@ export function createMarkup(items) {
       }
     )
     .join('');
-  refs.recipeCardList.insertAdjacentHTML('beforeend', markup);
+  refs.recipeCardList.innerHTML = markup;
   reloadFavoriteRecipes();
   return markup;
 }
@@ -199,19 +198,11 @@ function reloadFavoriteRecipes(params) {
 
   const generalFavoriteId = [...storedFavorites, ...remouteArrFavoriteId];
 
-  console.log('storedFavorites', storedFavorites);
-  console.log('dishLocalKeyGet', remouteArrFavoriteId);
-  console.log('generalFavoriteId', generalFavoriteId);
-
-
-  // console.log('cardWithLike', cardWithLike);
-
   for (let i = 0; i < cardWithLike.length; i++) {
     const swgWithLike = cardWithLike[i].querySelector('.recipe__like--svg');
-    // console.log('swgWithLike', swgWithLike);
+
     for (let j = 0; j < generalFavoriteId.length; j++) {
       if (cardWithLike[i].id === generalFavoriteId[j]) {
-        // console.log(cardWithLike[i].id);
         swgWithLike.classList.add('like__marked--svg');
       }
     }
@@ -253,7 +244,7 @@ function onOpenModal(e) {
   }
 
   const cardWithLike = targetElement.closest('.recipe__card--item');
-  // console.log(cardWithLike.id);
+
   OpenModal(cardWithLike.id);
 }
 
@@ -275,7 +266,6 @@ function descriptionCuter(description, maxLength) {
     maxLength = 80;
   }
 
-  // console.log(description.length);
   if (description.length <= maxLength) {
     return description;
   } else {
@@ -293,7 +283,6 @@ function titleCuter(title, maxLength) {
     maxLength = 27;
   }
 
-  // console.log(title.length);
   if (title.length <= maxLength) {
     return title;
   } else {
@@ -313,6 +302,5 @@ function requalityImage() {
     limitPages = 6;
   }
 
-  // console.log(limitPages);
   return limitPages;
 }
